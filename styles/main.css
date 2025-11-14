@@ -307,13 +307,14 @@ section:nth-child(even) {
     padding-left: 0;
 }
 
-.missions-list li {
-    margin-bottom: var(--spacing-sm);
+/* FIXED: Perfect vertical alignment for checkmarks and bullets */
+.missions-list li,
+.resource-list li {
     position: relative;
     padding-left: var(--spacing-lg);
-    display: flex;
-    align-items: flex-start;
+    margin-bottom: var(--spacing-sm);
     line-height: 1.6;
+    display: block;
 }
 
 .missions-list li::before {
@@ -322,9 +323,20 @@ section:nth-child(even) {
     font-weight: bold;
     position: absolute;
     left: 0;
-    font-size: 1.2rem;
-    top: 0.1em;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    top: 0.05em; /* Perfectly aligned with text baseline */
+    line-height: 1;
+}
+
+.resource-list li::before {
+    content: '•';
+    color: var(--accent-green);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.6rem; /* Slightly reduced for better alignment */
+    top: -0.15em; /* Perfectly aligned with text baseline */
+    line-height: 1;
 }
 
 .team-section {
@@ -415,7 +427,7 @@ section:nth-child(even) {
     border-radius: var(--border-radius);
 }
 
-/* Resources Section - UPDATED FOR BETTER ALIGNMENT */
+/* Resources Section */
 .resources-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -445,58 +457,6 @@ section:nth-child(even) {
 .resource-list {
     list-style: none;
     padding-left: 0;
-}
-
-.resource-list li {
-    margin-bottom: var(--spacing-sm);
-    position: relative;
-    padding-left: var(--spacing-lg);
-    display: flex;
-    align-items: flex-start;
-    line-height: 1.6;
-}
-
-.resource-list li::before {
-    content: '•';
-    color: var(--accent-green);
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-    font-size: 1.8rem; /* Increased size for better visibility */
-    top: -0.2em; /* Better vertical alignment */
-    line-height: 1.6;
-}
-
-/* FIXED: Improved alignment for both checkmarks and bullets */
-.missions-list li,
-.resource-list li {
-    position: relative;
-    padding-left: var(--spacing-lg);
-    margin-bottom: var(--spacing-sm);
-    line-height: 1.6;
-    display: block; /* Changed from flex to block for better alignment */
-}
-
-.missions-list li::before {
-    content: '✓';
-    color: var(--accent-green);
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-    font-size: 1.2rem;
-    top: 0.1em; /* Fine-tuned vertical positioning */
-    line-height: 1.6;
-}
-
-.resource-list li::before {
-    content: '•';
-    color: var(--accent-green);
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-    font-size: 1.8rem; /* Slightly larger for bullet points */
-    top: -0.2em; /* Fine-tuned vertical positioning */
-    line-height: 1.6;
 }
 
 .get-involved {
