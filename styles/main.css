@@ -752,7 +752,8 @@ section:nth-child(even) {
     }
     
     .hero-logo img {
-        height: 300px; /* Adjusted for mobile */
+        width: 300px;
+        height: 300px;
     }
     
     .hero-actions {
@@ -799,7 +800,8 @@ section:nth-child(even) {
     }
     
     .hero-logo img {
-        height: 200px; /* Further adjusted for small mobile */
+        width: 200px;
+        height: 200px;
     }
     
     .events-grid,
