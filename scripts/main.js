@@ -249,18 +249,4 @@ document.addEventListener('DOMContentLoaded', function() {
         const currentYear = new Date().getFullYear();
         currentYearElement.innerHTML = currentYearElement.innerHTML.replace('2023', currentYear);
     }
-    
-    // Performance optimization: Preload critical resources
-    const criticalResources = [
-        'images/logo.png',
-        'https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Lato:wght@300;400;700&display=swap'
-    ];
-    
-    criticalResources.forEach(resource => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = resource.includes('fonts') ? 'style' : 'image';
-        link.href = resource;
-        document.head.appendChild(link);
-    });
 });
