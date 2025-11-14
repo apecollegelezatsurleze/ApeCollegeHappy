@@ -330,8 +330,8 @@ section:nth-child(even) {
     position: absolute;
     left: 0;
     font-size: 1.1rem;
-    top: 0.1em;
-    line-height: 1.6;
+    top: 0.2em;
+    line-height: 1;
 }
 
 .resource-list li::before {
@@ -341,8 +341,8 @@ section:nth-child(even) {
     position: absolute;
     left: 0;
     font-size: 1.8rem;
-    top: -0.2em;
-    line-height: 1.6;
+    top: -0.05em;
+    line-height: 1;
 }
 
 .team-section {
