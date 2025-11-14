@@ -307,14 +307,15 @@ section:nth-child(even) {
     padding-left: 0;
 }
 
-/* PERFECTLY ALIGNED: Checkmarks and bullets - FIXED VERSION */
+/* PERFECTLY ALIGNED: Checkmarks and bullets - FIXED BASELINE */
 .missions-list li,
 .resource-list li {
     position: relative;
     padding-left: var(--spacing-lg);
     margin-bottom: var(--spacing-sm);
     line-height: 1.6;
-    display: block;
+    display: flex;
+    align-items: baseline;
 }
 
 .missions-list li::before {
@@ -324,7 +325,7 @@ section:nth-child(even) {
     position: absolute;
     left: 0;
     font-size: 1.1rem;
-    top: 0.15em;
+    top: -0.1em;
     line-height: 1;
 }
 
@@ -335,7 +336,7 @@ section:nth-child(even) {
     position: absolute;
     left: 0;
     font-size: 1.8rem;
-    top: -0.25em;
+    top: -0.4em;
     line-height: 1;
 }
 
