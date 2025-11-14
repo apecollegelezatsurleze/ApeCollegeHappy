@@ -500,34 +500,13 @@ section:nth-child(even) {
     margin-bottom: var(--spacing-sm);
 }
 
-/* Pricing list styles */
-.pricing-list {
-    list-style: none;
-    padding-left: 0;
-    margin: var(--spacing-sm) 0;
+/* Pricing styles - Updated */
+.pricing-text {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.5;
 }
 
-.pricing-list li {
-    margin-bottom: var(--spacing-xs);
-    position: relative;
-    padding-left: var(--spacing-md);
-    display: flex;
-    align-items: flex-start;
-    line-height: 1.6;
-}
-
-.pricing-list li::before {
-    content: "•";
-    color: var(--accent-green);
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-    font-size: 1.2rem;
-    top: 0;
-    line-height: 1.6;
-}
-
-.pricing-list strong {
+.pricing-text strong {
     color: var(--primary-violet);
 }
 
@@ -535,7 +514,11 @@ section:nth-child(even) {
     font-style: italic;
     margin-bottom: var(--spacing-md);
     color: var(--primary-violet);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    background-color: rgba(106, 27, 154, 0.05);
+    padding: 8px 12px;
+    border-radius: var(--border-radius);
+    border-left: 3px solid var(--accent-green);
 }
 
 .involvement-option .btn {
@@ -843,6 +826,12 @@ section:nth-child(even) {
     
     .logo img {
         height: 80px;
+    }
+    
+    /* Keep purple styling for pricing example on mobile */
+    .pricing-example {
+        color: var(--primary-violet);
+        background-color: rgba(106, 27, 154, 0.05);
     }
 }
 
