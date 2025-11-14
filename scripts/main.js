@@ -174,24 +174,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Add loading animation to images
-    const images = document.querySelectorAll('img');
-    images.forEach(img => {
-        // Add loading attribute for lazy loading if not already present
-        if (!img.hasAttribute('loading')) {
-            img.setAttribute('loading', 'lazy');
-        }
-        
-        // Add fade-in effect when images load
-        img.addEventListener('load', function() {
-            this.style.opacity = '1';
-        });
-        
-        // Set initial opacity for fade-in effect
-        img.style.opacity = '0';
-        img.style.transition = 'opacity 0.3s ease';
-    });
-    
     // Add intersection observer for animations
     if ('IntersectionObserver' in window) {
         const observerOptions = {
