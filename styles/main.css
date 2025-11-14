@@ -456,13 +456,14 @@ section:nth-child(even) {
 }
 
 .resource-list li::before {
-    content: '•';
+    content: "•";
     color: var(--accent-green);
     font-weight: bold;
     position: absolute;
     left: 0;
     font-size: 1.5rem;
-    top: -0.1em;
+    top: 0;
+    line-height: 1.4;
 }
 
 .get-involved {
