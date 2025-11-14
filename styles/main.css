@@ -250,8 +250,9 @@ p {
 }
 
 .hero-logo img {
-    height: 400px; /* 4x larger than header logo */
-    width: auto;
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
     max-width: 100%;
 }
 
