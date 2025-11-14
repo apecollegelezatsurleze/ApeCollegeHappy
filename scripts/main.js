@@ -1,6 +1,47 @@
 // Main JavaScript for APE François-Verdier website
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile navbar scroll behavior
+    let lastScrollTop = 0;
+    const header = document.querySelector('.header');
+    const scrollThreshold = 100;
+
+    function handleNavbarScroll() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (window.innerWidth <= 768) {
+            if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+                // Scrolling down - hide navbar
+                header.classList.add('hidden');
+            } else {
+                // Scrolling up - show navbar
+                header.classList.remove('hidden');
+            }
+        } else {
+            // On desktop, ensure navbar is always visible
+            header.classList.remove('hidden');
+        }
+        
+        lastScrollTop = scrollTop;
+    }
+
+    // Throttle function for performance
+    function throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        }
+    }
+
+    // Add scroll event listener with throttling
+    window.addEventListener('scroll', throttle(handleNavbarScroll, 100));
+
     // Mobile menu toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navigation = document.querySelector('.navigation');
