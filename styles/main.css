@@ -307,13 +307,14 @@ section:nth-child(even) {
     padding-left: 0;
 }
 
-.missions-list li {
-    margin-bottom: var(--spacing-sm);
+/* PERFECTLY ALIGNED: Checkmarks and bullets */
+.missions-list li,
+.resource-list li {
     position: relative;
     padding-left: var(--spacing-lg);
-    display: flex;
-    align-items: flex-start;
+    margin-bottom: var(--spacing-sm);
     line-height: 1.6;
+    display: block;
 }
 
 .missions-list li::before {
@@ -322,8 +323,19 @@ section:nth-child(even) {
     font-weight: bold;
     position: absolute;
     left: 0;
-    font-size: 1.2rem;
-    top: 0.1em;
+    font-size: 1.1rem;
+    top: 0;
+    line-height: 1.6;
+}
+
+.resource-list li::before {
+    content: '•';
+    color: var(--accent-green);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.6rem;
+    top: 0;
     line-height: 1.6;
 }
 
@@ -447,26 +459,6 @@ section:nth-child(even) {
     padding-left: 0;
 }
 
-.resource-list li {
-    margin-bottom: var(--spacing-sm);
-    position: relative;
-    padding-left: var(--spacing-lg);
-    display: flex;
-    align-items: flex-start;
-    line-height: 1.6;
-}
-
-.resource-list li::before {
-    content: '•';
-    color: var(--accent-green);
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-    font-size: 1.5rem;
-    top: 0;
-    line-height: 1.6;
-}
-
 .get-involved {
     background-color: var(--neutral-white);
     padding: var(--spacing-lg);
@@ -482,12 +474,50 @@ section:nth-child(even) {
     margin-top: var(--spacing-lg);
 }
 
+/* Compact Pricing Styles */
+.pricing-compact {
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+}
+
+.pricing-amount {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-violet);
+    margin-bottom: 0.25rem;
+}
+
+.pricing-details {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.pricing-example {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--primary-violet);
+    background-color: rgba(106, 27, 154, 0.05);
+    padding: 4px 8px;
+    border-radius: var(--border-radius);
+    display: inline-block;
+}
+
+/* Remove the old pricing styles */
+.pricing-text,
+.pricing-example.old-version {
+    display: none;
+}
+
+/* Adjust involvement option spacing for compact layout */
 .involvement-option {
     padding: var(--spacing-md);
     background-color: var(--neutral-light);
     border-radius: var(--border-radius);
     transition: var(--transition);
     border-left: 3px solid var(--accent-green);
+    text-align: center;
 }
 
 .involvement-option:hover {
@@ -498,27 +528,6 @@ section:nth-child(even) {
 .involvement-option h4 {
     color: var(--primary-violet);
     margin-bottom: var(--spacing-sm);
-}
-
-/* Pricing styles - Updated */
-.pricing-text {
-    margin-bottom: var(--spacing-sm);
-    line-height: 1.5;
-}
-
-.pricing-text strong {
-    color: var(--primary-violet);
-}
-
-.pricing-example {
-    font-style: italic;
-    margin-bottom: var(--spacing-md);
-    color: var(--primary-violet);
-    font-size: 0.95rem;
-    background-color: rgba(106, 27, 154, 0.05);
-    padding: 8px 12px;
-    border-radius: var(--border-radius);
-    border-left: 3px solid var(--accent-green);
 }
 
 .involvement-option .btn {
