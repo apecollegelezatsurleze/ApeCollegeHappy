@@ -307,14 +307,13 @@ section:nth-child(even) {
     padding-left: 0;
 }
 
-/* FIXED: Perfect vertical alignment for checkmarks and bullets */
-.missions-list li,
-.resource-list li {
+.missions-list li {
+    margin-bottom: var(--spacing-sm);
     position: relative;
     padding-left: var(--spacing-lg);
-    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: flex-start;
     line-height: 1.6;
-    display: block;
 }
 
 .missions-list li::before {
@@ -323,20 +322,9 @@ section:nth-child(even) {
     font-weight: bold;
     position: absolute;
     left: 0;
-    font-size: 1.1rem;
-    top: 0.05em; /* Perfectly aligned with text baseline */
-    line-height: 1;
-}
-
-.resource-list li::before {
-    content: '•';
-    color: var(--accent-green);
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-    font-size: 1.6rem; /* Slightly reduced for better alignment */
-    top: -0.15em; /* Perfectly aligned with text baseline */
-    line-height: 1;
+    font-size: 1.2rem;
+    top: 0.1em;
+    line-height: 1.6;
 }
 
 .team-section {
@@ -457,6 +445,26 @@ section:nth-child(even) {
 .resource-list {
     list-style: none;
     padding-left: 0;
+}
+
+.resource-list li {
+    margin-bottom: var(--spacing-sm);
+    position: relative;
+    padding-left: var(--spacing-lg);
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.6;
+}
+
+.resource-list li::before {
+    content: '•';
+    color: var(--accent-green);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    top: 0;
+    line-height: 1.6;
 }
 
 .get-involved {
