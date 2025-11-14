@@ -415,7 +415,7 @@ section:nth-child(even) {
     border-radius: var(--border-radius);
 }
 
-/* Resources Section */
+/* Resources Section - UPDATED FOR BETTER ALIGNMENT */
 .resources-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -462,8 +462,40 @@ section:nth-child(even) {
     font-weight: bold;
     position: absolute;
     left: 0;
-    font-size: 1.5rem;
-    top: 0;
+    font-size: 1.8rem; /* Increased size for better visibility */
+    top: -0.2em; /* Better vertical alignment */
+    line-height: 1.6;
+}
+
+/* FIXED: Improved alignment for both checkmarks and bullets */
+.missions-list li,
+.resource-list li {
+    position: relative;
+    padding-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+    display: block; /* Changed from flex to block for better alignment */
+}
+
+.missions-list li::before {
+    content: '✓';
+    color: var(--accent-green);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+    top: 0.1em; /* Fine-tuned vertical positioning */
+    line-height: 1.6;
+}
+
+.resource-list li::before {
+    content: '•';
+    color: var(--accent-green);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.8rem; /* Slightly larger for bullet points */
+    top: -0.2em; /* Fine-tuned vertical positioning */
     line-height: 1.6;
 }
 
