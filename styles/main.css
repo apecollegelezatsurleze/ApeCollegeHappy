@@ -167,7 +167,7 @@ p {
 }
 
 .logo img {
-    height: 100px; /* Increased from original */
+    height: 100px;
     width: auto;
 }
 
@@ -245,6 +245,16 @@ p {
     background-size: cover;
 }
 
+.hero-logo {
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero-logo img {
+    height: 400px; /* 4x larger than header logo */
+    width: auto;
+    max-width: 100%;
+}
+
 .hero h1 {
     color: var(--neutral-white);
     margin-bottom: var(--spacing-sm);
@@ -291,14 +301,14 @@ section:nth-child(even) {
 }
 
 .missions-list {
-    margin-left: var(--spacing-md);
     margin-bottom: var(--spacing-lg);
+    list-style: none;
 }
 
 .missions-list li {
     margin-bottom: var(--spacing-sm);
     position: relative;
-    padding-left: var(--spacing-sm);
+    padding-left: var(--spacing-lg);
 }
 
 .missions-list li::before {
@@ -307,6 +317,7 @@ section:nth-child(even) {
     font-weight: bold;
     position: absolute;
     left: 0;
+    font-size: 1.2rem;
 }
 
 .team-section {
@@ -424,22 +435,23 @@ section:nth-child(even) {
     margin-bottom: var(--spacing-md);
 }
 
-.resource-card ul {
-    margin-left: var(--spacing-md);
+.resource-list {
+    list-style: none;
 }
 
-.resource-card li {
+.resource-list li {
     margin-bottom: var(--spacing-sm);
     position: relative;
-    padding-left: var(--spacing-sm);
+    padding-left: var(--spacing-lg);
 }
 
-.resource-card li::before {
+.resource-list li::before {
     content: '•';
     color: var(--accent-green);
     font-weight: bold;
     position: absolute;
     left: 0;
+    font-size: 1.5rem;
 }
 
 .get-involved {
@@ -602,7 +614,7 @@ section:nth-child(even) {
 }
 
 .footer-logo img {
-    height: 80px; /* Increased from original */
+    height: 80px;
     width: auto;
     margin-bottom: var(--spacing-sm);
 }
@@ -738,6 +750,10 @@ section:nth-child(even) {
         border-bottom: none;
     }
     
+    .hero-logo img {
+        height: 300px; /* Adjusted for mobile */
+    }
+    
     .hero-actions {
         flex-direction: column;
         align-items: center;
@@ -779,6 +795,10 @@ section:nth-child(even) {
     
     section {
         padding: var(--spacing-xl) 0;
+    }
+    
+    .hero-logo img {
+        height: 200px; /* Further adjusted for small mobile */
     }
     
     .events-grid,
