@@ -336,7 +336,7 @@ section:nth-child(even) {
     position: absolute;
     left: 0;
     font-size: 1.8rem;
-    top: -0.3em;
+    top: -0.1em;
     line-height: 1;
 }
 
