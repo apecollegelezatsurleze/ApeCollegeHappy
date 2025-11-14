@@ -313,7 +313,7 @@ section:nth-child(even) {
     padding-left: var(--spacing-lg);
     display: flex;
     align-items: flex-start;
-    line-height: 1.4;
+    line-height: 1.6;
 }
 
 .missions-list li::before {
@@ -323,8 +323,8 @@ section:nth-child(even) {
     position: absolute;
     left: 0;
     font-size: 1.2rem;
-    top: 0;
-    line-height: 1.4;
+    top: 0.1em;
+    line-height: 1.6;
 }
 
 .team-section {
@@ -453,18 +453,18 @@ section:nth-child(even) {
     padding-left: var(--spacing-lg);
     display: flex;
     align-items: flex-start;
-    line-height: 1.4;
+    line-height: 1.6;
 }
 
 .resource-list li::before {
-    content: "•";
+    content: '•';
     color: var(--accent-green);
     font-weight: bold;
     position: absolute;
     left: 0;
     font-size: 1.5rem;
     top: 0;
-    line-height: 1.4;
+    line-height: 1.6;
 }
 
 .get-involved {
@@ -498,6 +498,50 @@ section:nth-child(even) {
 .involvement-option h4 {
     color: var(--primary-violet);
     margin-bottom: var(--spacing-sm);
+}
+
+/* Pricing list styles */
+.pricing-list {
+    list-style: none;
+    padding-left: 0;
+    margin: var(--spacing-sm) 0;
+}
+
+.pricing-list li {
+    margin-bottom: var(--spacing-xs);
+    position: relative;
+    padding-left: var(--spacing-md);
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.6;
+}
+
+.pricing-list li::before {
+    content: "•";
+    color: var(--accent-green);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+    top: 0;
+    line-height: 1.6;
+}
+
+.pricing-list strong {
+    color: var(--primary-violet);
+}
+
+.pricing-example {
+    font-style: italic;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-violet);
+    font-size: 0.9rem;
+}
+
+.involvement-option .btn {
+    margin-top: var(--spacing-sm);
+    width: 100%;
+    text-align: center;
 }
 
 /* Contact Section */
