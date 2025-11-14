@@ -38,6 +38,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 spans[2].style.transform = 'none';
             });
         });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navigation.contains(e.target) && !menuToggle.contains(e.target)) {
+                navigation.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                
+                // Reset hamburger animation
+                const spans = menuToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
     }
     
     // Form handling
