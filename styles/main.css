@@ -138,7 +138,7 @@ p {
 }
 
 .btn-secondary {
-    background-color: transparent;
+    background-color: var(--neutral-white);
     color: var(--primary-violet);
     border: 2px solid var(--primary-violet);
 }
@@ -304,6 +304,7 @@ section:nth-child(even) {
 .missions-list {
     margin-bottom: var(--spacing-lg);
     list-style: none;
+    padding-left: 0;
 }
 
 .missions-list li {
@@ -438,6 +439,7 @@ section:nth-child(even) {
 
 .resource-list {
     list-style: none;
+    padding-left: 0;
 }
 
 .resource-list li {
