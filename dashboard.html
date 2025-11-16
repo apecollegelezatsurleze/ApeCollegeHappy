@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2c5aa0">
+    <title>Tableau de bord - Bal d'Hiver - APE François-Verdier</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .dashboard {
+            padding: var(--spacing-xl) 0;
+            background-color: var(--light);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .stat-card {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .classes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .class-card {
+            background: white;
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .class-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .class-name {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .class-count {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: var(--neutral-medium);
+            border-radius: 10px;
+            margin: var(--spacing-sm) 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.5s ease;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: var(--spacing-lg);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/logo.png" alt="APE François-Verdier" width="50" height="50">
+                    <h1>Tableau de bord - Bal d'Hiver</h1>
+                </div>
+                <a href="index.html#evenements" class="btn btn-secondary">Retour au site</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="dashboard">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Inscriptions au Bal d'Hiver 2025</h2>
+                    <p>Suivi en temps réel des inscriptions par classe</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="dashboard-total">0</div>
+                        <p>Total des inscrits</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="participation-rate">0%</div>
+                        <p>Taux de participation</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="top-class">-</div>
+                        <p>Classe la plus participative</p>
+                    </div>
+                </div>
+
+                <div class="class-breakdown">
+                    <h3>Inscriptions par classe</h3>
+                    <div class="classes-grid" id="classes-container">
+                        <!-- Les cartes de classe seront générées par JavaScript -->
+                    </div>
+                </div>
+
+                <div class="progress-section" style="margin-top: var(--spacing-xl);">
+                    <h3>Objectif de participation</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <p id="progress-text">0% de l'objectif atteint</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>APE François-Verdier</h3>
+                    <p>Tableau de bord du Bal d'Hiver 2025</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 APE François-Verdier. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/dashboard.js"></script>
+</body>
+</html>
