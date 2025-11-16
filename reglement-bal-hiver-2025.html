@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Règlement Intérieur - Bal d'Hiver 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #e6f7ff 0%, #f0f8ff 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 100, 0.1);
+            overflow: hidden;
+            border: 1px solid #d1e8ff;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        
+        .theme {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #a8d8ff;
+            margin: 15px 0;
+        }
+        
+        .date-location {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .info-box {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        h2 {
+            color: #1e3c72;
+            margin: 25px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e6f2ff;
+            font-size: 1.5rem;
+        }
+        
+        h2:first-child {
+            margin-top: 0;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+        
+        .important {
+            background: #fff9e6;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .contact-info {
+            background: #e8f4ff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        
+        .contact-info h3 {
+            color: #1e3c72;
+            margin-bottom: 10px;
+        }
+        
+        .signature {
+            margin-top: 30px;
+            text-align: right;
+            font-style: italic;
+            color: #666;
+        }
+        
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 15px;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .btn-accept {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+        
+        .btn-decline {
+            background: #f8f9fa;
+            color: #666;
+            border: 1px solid #ddd;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #eaeaea;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                border-radius: 10px;
+            }
+            
+            header {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .date-location {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Règlement Intérieur</h1>
+            <div class="subtitle">Bal d'Hiver 2025</div>
+            <div class="theme">"Neige, Glace et Banquise" ❄️</div>
+            <div class="date-location">
+                <div class="info-box">
+                    <strong>Date :</strong> Vendredi 19 décembre 2025
+                </div>
+                <div class="info-box">
+                    <strong>Lieu :</strong> Foyer Rural de Lézat-sur-Lèze
+                </div>
+                <div class="info-box">
+                    <strong>Horaire :</strong> 20h30 - 23h30
+                </div>
+            </div>
+        </header>
+        
+        <div class="content">
+            <h2>Conditions de Participation</h2>
+            <ul>
+                <li>Le bal est ouvert à tous les élèves du Collège François Verdier.</li>
+                <li>L'inscription est obligatoire via le formulaire en ligne.</li>
+                <li>Une autorisation parentale signée est requise pour chaque participant.</li>
+                <li>Les élèves doivent arriver au plus tard à 21h00.</li>
+                <li>Aucune sortie n'est autorisée avant 22h30, sauf cas exceptionnel avec accord parental.</li>
+            </ul>
+            
+            <h2>Tenue Vestimentaire</h2>
+            <ul>
+                <li>Tenue en accord avec le thème "Neige, Glace et Banquise" (bleu, blanc, argent).</li>
+                <li>Tenue correcte et adaptée à un événement scolaire exigée.</li>
+                <li>Les accessoires dangereux ou encombrants sont interdits.</li>
+                <li>Les chaussures doivent être adaptées à la danse et à la sécurité.</li>
+            </ul>
+            
+            <h2>Comportement et Respect</h2>
+            <ul>
+                <li>Respect envers tous les participants, encadrants et le matériel.</li>
+                <li>Toute forme de harcèlement, intimidation ou violence est strictement interdite.</li>
+                <li>Les élèves s'engagent à suivre les instructions de l'équipe d'encadrement.</li>
+                <li>Les téléphones portables sont autorisés mais leur usage doit être raisonnable.</li>
+                <li>La prise de photos/vidéos doit respecter le droit à l'image de chacun.</li>
+            </ul>
+            
+            <h2>Sécurité et Bien-Être</h2>
+            <ul>
+                <li>Des adultes référents (enseignants, parents bénévoles) seront identifiables.</li>
+                <li>Des "junior référents" (élèves volontaires) seront disponibles pour écouter.</li>
+                <li>Un espace calme sera aménagé pour les élèves ayant besoin de pause.</li>
+                <li>Tout problème doit être signalé immédiatement à un encadrant.</li>
+                <li>En cas de malaise, une trousse de premiers secours sera disponible.</li>
+            </ul>
+            
+            <h2>Consommations</h2>
+            <ul>
+                <li>Un buffet et des boissons non alcoolisées seront offerts.</li>
+                <li>L'apport de nourriture ou de boisson extérieure est interdit.</li>
+                <li>Les allergies alimentaires doivent être signalées à l'inscription.</li>
+                <li>L'alcool, le tabac et toute substance illicite sont strictement interdits.</li>
+            </ul>
+            
+            <div class="important">
+                <strong>Important :</strong> Tout manquement au règlement pourra entraîner des mesures disciplinaires, 
+                y compris l'exclusion immédiate de l'événement et des sanctions scolaires.
+            </div>
+            
+            <div class="contact-info">
+                <h3>En cas de problème pendant l'événement :</h3>
+                <p>Contacter un encadrant identifié par un badge ou appeler le responsable APE au <strong>06 12 34 56 78</strong></p>
+            </div>
+            
+            <div class="signature">
+                L'équipe de l'APE du Collège François Verdier<br>
+                Fait à Lézat-sur-Lèze, le 1er décembre 2025
+            </div>
+            
+            <div class="btn-container">
+                <button class="btn btn-accept">J'accepte le règlement</button>
+                <button class="btn btn-decline">Je refuse</button>
+            </div>
+        </div>
+        
+        <footer>
+            <p>APE du Collège François Verdier • association.ape@college-verdier.fr</p>
+            <p>© 2025 - Tous droits réservés</p>
+        </footer>
+    </div>
+
+    <script>
+        document.querySelector('.btn-accept').addEventListener('click', function() {
+            alert('Merci d\'avoir accepté le règlement. Vous pouvez maintenant procéder à l\'inscription.');
+            // Ici, vous pourriez ajouter une logique pour marquer l'acceptation dans le système
+        });
+        
+        document.querySelector('.btn-decline').addEventListener('click', function() {
+            if(confirm('En refusant le règlement, vous ne pourrez pas inscrire votre enfant au bal. Confirmez-vous votre refus ?')) {
+                alert('Vous avez refusé le règlement. Retour à la page d\'accueil.');
+                // Redirection ou autre action en cas de refus
+            }
+        });
+    </script>
+</body>
+</html>
