@@ -892,100 +892,6 @@ section:nth-child(even) {
     opacity: 0.9;
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .bal-content-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-    }
-}
-
-@media (max-width: 992px) {
-    .registration-banner {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: var(--spacing-lg);
-    }
-    
-    .registration-stats {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    
-    .progress-section {
-        max-width: 100%;
-    }
-    
-    .registration-actions-compact {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    
-    .bal-section .section-header h2 {
-        font-size: 3rem;
-    }
-    
-    .bal-section .section-header p {
-        font-size: 1.3rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .registration-stats {
-        flex-direction: column;
-        gap: var(--spacing-lg);
-    }
-    
-    .details-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .registration-actions-compact {
-        flex-direction: column;
-    }
-    
-    .registration-actions-compact .btn {
-        justify-content: center;
-    }
-    
-    .program-list li {
-        padding-left: 60px;
-    }
-    
-    .program-list li::before {
-        left: 15px;
-        font-size: 1.5rem;
-    }
-    
-    .event-details-card,
-    .program-section {
-        padding: var(--spacing-xl);
-    }
-}
-
-@media (max-width: 480px) {
-    .bal-section .section-header h2 {
-        font-size: 2.5rem;
-    }
-    
-    .bal-section .section-header p {
-        font-size: 1.2rem;
-    }
-    
-    .counter-number {
-        font-size: 3.5rem;
-    }
-    
-    .program-list li {
-        padding-left: 50px;
-    }
-    
-    .program-list li::before {
-        left: 12px;
-        font-size: 1.3rem;
-    }
-}
-
 /* Events Section */
 .events {
     background-color: var(--neutral-white);
@@ -1076,28 +982,28 @@ section:nth-child(even) {
     font-weight: bold;
 }
 
-/* Join Section */
-section.join {
+/* Join Section - Expert UI/UX with Perfect Contrast */
+.join {
     background-color: var(--primary);
     color: var(--neutral-white);
     text-align: center;
 }
 
-section.join .section-header h2 {
+.join .section-header h2 {
     color: var(--neutral-white);
 }
 
-section.join .section-header h2::after {
+.join .section-header h2::after {
     background-color: var(--accent);
 }
 
-section.join .section-header p {
+.join .section-header p {
     color: var(--neutral-light);
     max-width: 700px;
     margin: 0 auto;
 }
 
-section.join .get-involved {
+.get-involved {
     background-color: transparent;
     padding: 0;
     border-radius: 0;
@@ -1105,14 +1011,14 @@ section.join .get-involved {
     border-left: none;
 }
 
-section.join .involvement-options {
+.involvement-options {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: var(--spacing-md);
     margin-top: var(--spacing-lg);
 }
 
-section.join .involvement-option {
+.involvement-option {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 30px;
     border-radius: var(--border-radius);
@@ -1121,49 +1027,49 @@ section.join .involvement-option {
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-section.join .involvement-option:hover {
+.involvement-option:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
     border-color: var(--accent);
     background-color: rgba(255, 255, 255, 0.15);
 }
 
-section.join .involvement-option h4 {
+.involvement-option h4 {
     color: var(--neutral-white);
     margin-bottom: 15px;
 }
 
-section.join .involvement-option p {
+.involvement-option p {
     color: var(--neutral-light);
     margin-bottom: var(--spacing-md);
 }
 
-section.join .involvement-option .btn {
+.involvement-option .btn {
     background-color: var(--neutral-white);
     color: var(--primary);
     margin-top: var(--spacing-sm);
     width: auto;
 }
 
-section.join .involvement-option .btn:hover {
+.involvement-option .btn:hover {
     background-color: var(--accent);
     color: var(--dark);
 }
 
-/* Compact Pricing Styles */
-section.join .pricing-compact {
+/* Compact Pricing Styles - Updated for light background */
+.pricing-compact {
     margin-bottom: var(--spacing-sm);
     text-align: center;
 }
 
-section.join .pricing-details {
+.pricing-details {
     font-size: 1rem;
     color: var(--neutral-white);
     margin-bottom: 0.5rem;
     line-height: 1.4;
 }
 
-section.join .pricing-example {
+.pricing-example {
     font-size: 0.9rem;
     font-style: italic;
     color: var(--accent);
@@ -1430,8 +1336,25 @@ section.join .pricing-example {
     }
 }
 
-/* Responsive Design */
+/* Responsive Design - Fully Integrated */
 @media (max-width: 1200px) {
+    .bal-content-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .bal-hero {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+    
+    .registration-widget {
+        position: relative;
+        top: 0;
+        order: -1;
+        max-width: 600px;
+        margin: 0 auto;
+    }
     
     .about-content {
         grid-template-columns: 1fr;
@@ -1451,6 +1374,50 @@ section.join .pricing-example {
     }
 }
 
+@media (max-width: 992px) {
+    .registration-banner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--spacing-lg);
+        padding: var(--spacing-xl);
+    }
+    
+    .registration-stats {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .progress-section {
+        max-width: 100%;
+        min-width: 250px;
+    }
+    
+    .registration-actions-compact {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .bal-section .section-header h2 {
+        font-size: 3rem;
+    }
+    
+    .bal-section .section-header p {
+        font-size: 1.3rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 @media (max-width: 768px) {
     h1 {
         font-size: 2rem;
@@ -1460,6 +1427,7 @@ section.join .pricing-example {
         font-size: 1.75rem;
     }
     
+    /* Mobile Navigation */
     .menu-toggle {
         display: flex;
     }
@@ -1499,6 +1467,59 @@ section.join .pricing-example {
         border-bottom: none;
     }
     
+    /* Bal d'Hiver Mobile Optimizations */
+    .registration-stats {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+        text-align: center;
+    }
+    
+    .counter-number {
+        font-size: 3.5rem;
+    }
+    
+    .counter-progress {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        padding: var(--spacing-lg);
+    }
+    
+    .counter-progress span {
+        min-width: auto;
+        font-size: 1.3rem;
+    }
+    
+    .registration-actions-compact {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .registration-actions-compact .btn {
+        justify-content: center;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .program-list li {
+        padding-left: 60px;
+    }
+    
+    .program-list li::before {
+        left: 15px;
+        font-size: 1.5rem;
+    }
+    
+    .event-details-card,
+    .program-section {
+        padding: var(--spacing-xl);
+    }
+    
+    /* Hero Section Mobile */
     .hero-logo img {
         width: 300px;
         height: 300px;
@@ -1519,6 +1540,7 @@ section.join .pricing-example {
         margin-bottom: 10px;
     }
     
+    /* Other Sections Mobile */
     .team-grid {
         grid-template-columns: 1fr 1fr;
     }
@@ -1540,40 +1562,6 @@ section.join .pricing-example {
     .header.hidden {
         transform: translateY(-100%);
     }
-    
-    /* Join Section Mobile */
-    .join .section-header h2 {
-        font-size: 2.2rem;
-    }
-    
-    .join .section-header p {
-        font-size: 1.1rem;
-    }
-    
-    .involvement-options {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-    }
-    
-    .involvement-option {
-        padding: var(--spacing-lg);
-    }
-    
-    .involvement-option h4 {
-        font-size: 1.3rem;
-    }
-    
-    .involvement-option p {
-        font-size: 1rem;
-    }
-    
-    .pricing-compact {
-        padding: var(--spacing-md);
-    }
-    
-    .pricing-details {
-        font-size: 1.1rem;
-    }
 }
 
 @media (max-width: 480px) {
@@ -1585,6 +1573,43 @@ section.join .pricing-example {
         padding: var(--spacing-xl) 0;
     }
     
+    /* Bal d'Hiver Mobile Small */
+    .bal-section .section-header h2 {
+        font-size: 2.5rem;
+    }
+    
+    .bal-section .section-header p {
+        font-size: 1.2rem;
+    }
+    
+    .counter-number {
+        font-size: 3rem;
+    }
+    
+    .counter-label {
+        font-size: 1.1rem;
+    }
+    
+    .program-list li {
+        padding-left: 50px;
+        font-size: 1rem;
+    }
+    
+    .program-list li::before {
+        left: 12px;
+        font-size: 1.3rem;
+    }
+    
+    .registration-banner {
+        padding: var(--spacing-lg);
+    }
+    
+    .event-details-card,
+    .program-section {
+        padding: var(--spacing-lg);
+    }
+    
+    /* Hero Section Mobile Small */
     .hero-logo img {
         width: 200px;
         height: 200px;
@@ -1594,6 +1619,7 @@ section.join .pricing-example {
         font-size: 2rem;
     }
     
+    /* Other Sections Mobile Small */
     .events-grid,
     .resources-grid,
     .involvement-options {
