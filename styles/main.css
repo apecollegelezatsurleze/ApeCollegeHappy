@@ -1467,11 +1467,12 @@ section.join .pricing-example {
         border-bottom: none;
     }
     
-    /* Bal d'Hiver Mobile Optimizations */
+    /* Bal d'Hiver Mobile Optimizations - FIXED BUTTON CENTERING */
     .registration-stats {
         flex-direction: column;
         gap: var(--spacing-lg);
         text-align: center;
+        width: 100%;
     }
     
     .counter-number {
@@ -1482,6 +1483,7 @@ section.join .pricing-example {
         flex-direction: column;
         gap: var(--spacing-md);
         padding: var(--spacing-lg);
+        width: 100%;
     }
     
     .counter-progress span {
@@ -1492,13 +1494,26 @@ section.join .pricing-example {
     .registration-actions-compact {
         flex-direction: column;
         width: 100%;
+        align-items: center;
+        gap: var(--spacing-md);
     }
     
     .registration-actions-compact .btn {
         justify-content: center;
         width: 100%;
-        max-width: 300px;
+        max-width: 280px;
         margin: 0 auto;
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+    
+    /* Ensure perfect centering for registration buttons */
+    .registration-banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
     
     .details-grid {
@@ -1562,6 +1577,24 @@ section.join .pricing-example {
     .header.hidden {
         transform: translateY(-100%);
     }
+    
+    /* Join Section Mobile */
+    section.join .involvement-options {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    section.join .involvement-option {
+        padding: var(--spacing-lg);
+    }
+    
+    section.join .involvement-option h4 {
+        font-size: 1.3rem;
+    }
+    
+    section.join .involvement-option p {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1573,7 +1606,7 @@ section.join .pricing-example {
         padding: var(--spacing-xl) 0;
     }
     
-    /* Bal d'Hiver Mobile Small */
+    /* Bal d'Hiver Mobile Small - PERFECT BUTTON CENTERING */
     .bal-section .section-header h2 {
         font-size: 2.5rem;
     }
@@ -1604,6 +1637,12 @@ section.join .pricing-example {
         padding: var(--spacing-lg);
     }
     
+    .registration-actions-compact .btn {
+        max-width: 100%;
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+    
     .event-details-card,
     .program-section {
         padding: var(--spacing-lg);
@@ -1631,27 +1670,27 @@ section.join .pricing-example {
     }
     
     /* Join Section Mobile Small */
-    .join {
+    section.join {
         padding: var(--spacing-xl) 0;
     }
     
-    .join .section-header h2 {
+    section.join .section-header h2 {
         font-size: 2rem;
     }
     
-    .join .section-header p {
+    section.join .section-header p {
         font-size: 1rem;
     }
     
-    .involvement-option {
+    section.join .involvement-option {
         padding: var(--spacing-lg);
     }
     
-    .involvement-option h4 {
+    section.join .involvement-option h4 {
         font-size: 1.2rem;
     }
     
-    .pricing-details {
+    section.join .pricing-details {
         font-size: 1rem;
     }
 }
