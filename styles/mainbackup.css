@@ -920,154 +920,102 @@ section:nth-child(even) {
     font-weight: bold;
 }
 
-/* Join Section - Expert UI/UX with Perfect Contrast */
-.join {
-    background-color: var(--neutral-white);
-    padding: var(--spacing-xxl) 0;
-    position: relative;
+/* Join Section */
+section.join {
+    background-color: var(--primary);
+    color: var(--neutral-white);
+    text-align: center;
 }
 
-.join .section-header {
-    margin-bottom: var(--spacing-xxl);
+section.join .section-header h2 {
+    color: var(--neutral-white);
 }
 
-.join .section-header h2 {
-    color: var(--primary);
-    font-size: 2.5rem;
-    margin-bottom: var(--spacing-lg);
-    font-weight: 700;
-}
-
-.join .section-header h2::after {
+section.join .section-header h2::after {
     background-color: var(--accent);
-    height: 4px;
-    width: 100px;
 }
 
-.join .section-header p {
-    color: var(--text-color);
-    max-width: 800px;
+section.join .section-header p {
+    color: var(--neutral-light);
+    max-width: 700px;
     margin: 0 auto;
-    font-size: 1.2rem;
-    line-height: 1.7;
-    font-weight: 400;
 }
 
-.get-involved {
-    background: transparent;
+section.join .get-involved {
+    background-color: transparent;
     padding: 0;
     border-radius: 0;
     box-shadow: none;
     border-left: none;
-    margin-top: var(--spacing-xl);
 }
 
-.involvement-options {
+section.join .involvement-options {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--spacing-xl);
-    margin-top: var(--spacing-xl);
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
 }
 
-.involvement-option {
-    background: var(--neutral-white);
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius-lg);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+section.join .involvement-option {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
     text-align: center;
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--neutral-medium);
-    position: relative;
-    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.involvement-option::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-
-.involvement-option:hover::before {
-    transform: scaleX(1);
-}
-
-.involvement-option:hover {
+section.join .involvement-option:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
-    border-color: var(--primary);
+    border-color: var(--accent);
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
-.involvement-option h4 {
-    color: var(--primary);
-    margin-bottom: var(--spacing-md);
-    font-size: 1.4rem;
-    font-weight: 700;
-}
-
-.involvement-option p {
-    color: var(--text-color);
-    margin-bottom: var(--spacing-lg);
-    line-height: 1.6;
-    font-size: 1rem;
-    font-weight: 400;
-}
-
-.involvement-option .btn {
-    background: var(--primary);
+section.join .involvement-option h4 {
     color: var(--neutral-white);
-    margin-top: var(--spacing-md);
-    padding: 12px 24px;
-    font-weight: 600;
-    border: 2px solid var(--primary);
-    box-shadow: var(--shadow-sm);
-    border-radius: var(--border-radius);
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
+    margin-bottom: 15px;
 }
 
-.involvement-option .btn:hover {
-    background: var(--secondary);
-    border-color: var(--secondary);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+section.join .involvement-option p {
+    color: var(--neutral-light);
+    margin-bottom: var(--spacing-md);
 }
 
-/* Compact Pricing Styles - Updated for light background */
-.pricing-compact {
-    margin-bottom: var(--spacing-lg);
-    text-align: center;
-    background: var(--light);
-    padding: var(--spacing-md);
-    border-radius: var(--border-radius);
-    border: 1px solid var(--neutral-medium);
-}
-
-.pricing-details {
-    font-size: 1.2rem;
+section.join .involvement-option .btn {
+    background-color: var(--neutral-white);
     color: var(--primary);
-    margin-bottom: var(--spacing-sm);
-    line-height: 1.4;
-    font-weight: 700;
+    margin-top: var(--spacing-sm);
+    width: auto;
 }
 
-.pricing-example {
-    font-size: 0.95rem;
+section.join .involvement-option .btn:hover {
+    background-color: var(--accent);
+    color: var(--dark);
+}
+
+/* Compact Pricing Styles */
+section.join .pricing-compact {
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+}
+
+section.join .pricing-details {
+    font-size: 1rem;
+    color: var(--neutral-white);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+section.join .pricing-example {
+    font-size: 0.9rem;
     font-style: italic;
-    color: var(--gray);
-    background: var(--neutral-white);
-    padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--accent);
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 8px 12px;
     border-radius: var(--border-radius);
     display: inline-block;
-    margin-bottom: 0;
-    border: 1px solid var(--neutral-medium);
-    font-weight: 400;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Contact Section */
