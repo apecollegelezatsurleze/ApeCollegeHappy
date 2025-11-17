@@ -139,81 +139,114 @@
                     <p>Une soirée magique sur le thème "Neige, Glace et Banquise" ❄️</p>
                 </div>
                 
-                <div class="bal-hero">
-                    <!-- Left Column -->
-                    <div class="bal-details">
-                        <div class="bal-info-card">
-                            <h3>📅 Informations pratiques</h3>
-                            <div class="info-grid">
-                                <div class="info-item">
-                                    <strong>Date :</strong>
-                                    <span>Vendredi 19 décembre 2025</span>
-                                </div>
-                                <div class="info-item">
-                                    <strong>Lieu :</strong>
-                                    <span>Foyer Rural de Lézat-sur-Lèze</span>
-                                </div>
-                                <div class="info-item">
-                                    <strong>Horaires :</strong>
-                                    <span>20h30 - 23h30</span>
-                                </div>
-                                <div class="info-item">
-                                    <strong>Thème :</strong>
-                                    <span>« Neige, Glace et Banquise » ❄️</span>
+                <div class="bal-hero-single">
+                    <!-- Registration Banner -->
+                    <div class="registration-banner">
+                        <div class="registration-stats">
+                            <div class="counter-display">
+                                <div class="counter-number" id="bal-total-registrations">0</div>
+                                <p class="counter-label">élèves déjà inscrits</p>
+                            </div>
+                            <div class="progress-section">
+                                <h4>📊 Progression</h4>
+                                <div class="counter-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" id="bal-progress-fill"></div>
+                                    </div>
+                                    <span id="bal-progress-text">0%</span>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="bal-description">
-                            <h3>🎭 Au programme</h3>
-                            <ul class="program-list">
-                                <li>Musique et danse</li>
-                                <li>Élection du roi et de la reine du bal</li>
-                                <li>Animations surprises</li>
-                                <li>Collation spéciale</li>
-                                <li>Photo souvenir</li>
-                            </ul>
+                        <div class="registration-actions-compact">
+                            <a href="https://forms.gle/qzMPbN9d5ojCr9or8" class="btn btn-primary" target="_blank" rel="noopener">
+                                📝 S'inscrire maintenant
+                            </a>
+                            <a href="dashboard.html" class="btn btn-secondary">
+                                📊 Voir le tableau de bord
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Content Grid -->
+                    <div class="bal-content-grid">
+                        <!-- Main Content -->
+                        <div class="bal-main-content">
+                            <!-- Event Details -->
+                            <div class="event-details-card">
+                                <div class="event-details-header">
+                                    <h3>📅 Informations pratiques</h3>
+                                </div>
+                                <div class="details-grid">
+                                    <div class="detail-item">
+                                        <div class="detail-icon">📅</div>
+                                        <div class="detail-content">
+                                            <strong>Date :</strong>
+                                            <span>Vendredi 19 décembre 2025</span>
+                                        </div>
+                                    </div>
+                                    <div class="detail-item">
+                                        <div class="detail-icon">📍</div>
+                                        <div class="detail-content">
+                                            <strong>Lieu :</strong>
+                                            <span>Foyer Rural de Lézat-sur-Lèze</span>
+                                        </div>
+                                    </div>
+                                    <div class="detail-item">
+                                        <div class="detail-icon">⏰</div>
+                                        <div class="detail-content">
+                                            <strong>Horaires :</strong>
+                                            <span>20h30 - 23h30</span>
+                                        </div>
+                                    </div>
+                                    <div class="detail-item">
+                                        <div class="detail-icon">🎭</div>
+                                        <div class="detail-content">
+                                            <strong>Thème :</strong>
+                                            <span>« Neige, Glace et Banquise » ❄️</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             
+                            <!-- Program Section -->
+                            <div class="program-section">
+                                <h3>🎭 Au programme</h3>
+                                <ul class="program-list">
+                                    <li>Musique et danse avec notre DJ</li>
+                                    <li>Élection du roi et de la reine du bal</li>
+                                    <li>Animations surprises tout au long de la soirée</li>
+                                    <li>Collation spéciale sur le thème de l'hiver</li>
+                                    <li>Photo souvenir avec décor glacé</li>
+                                    <li>Concours de la meilleure tenue sur le thème</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Sidebar -->
+                        <div class="bal-sidebar">
+                            <!-- Help Request -->
                             <div class="help-request">
                                 <h4>🤝 Nous avons besoin de vous !</h4>
                                 <p>Pour que cet événement soit une réussite, nous recherchons :</p>
                                 <ul>
-                                    <li>Des idées pour la décoration de la salle</li>
+                                    <li>Des idées créatives pour la décoration de la salle</li>
                                     <li>Des objets en lien avec le thème (petits ou grands)</li>
                                     <li>Des volontaires pour l'encadrement le jour J</li>
+                                    <li>Des talents culinaires pour la collation</li>
+                                    <li>Des photographes amateurs pour immortaliser la soirée</li>
                                 </ul>
                                 <p><strong>Contactez-nous si vous pouvez nous aider !</strong></p>
                             </div>
                             
+                            <!-- Rules Section -->
                             <div class="rules-section">
                                 <h4>📋 Règlement du bal</h4>
-                                <p>Le règlement complet sera communiqué prochainement par email aux inscrits.</p>
+                                <p>Le bal est ouvert à tous les élèves du collège François Verdier.</p>
+                                <p>Tenue élégante ou sur le thème "Neige, Glace et Banquise" recommandée.</p>
+                                <p>Le règlement complet sera communiqué par email aux inscrits.</p>
                                 <p><em>Respect et bonne humeur sont de rigueur !</em></p>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Right Column - Registration Widget -->
-                    <div class="registration-widget">
-                        <div class="counter-card">
-                            <h3>📊 Inscriptions</h3>
-                            <div class="counter-number" id="bal-total-registrations">0</div>
-                            <p class="counter-label">élèves déjà inscrits</p>
-                            <div class="counter-progress">
-                                <div class="progress-bar">
-                                    <div class="progress-fill" id="bal-progress-fill"></div>
-                                </div>
-                                <span id="bal-progress-text">0%</span>
-                            </div>
-                        </div>
-                        
-                        <div class="registration-actions">
-                            <a href="https://forms.gle/qzMPbN9d5ojCr9or8" class="btn btn-primary btn-large" target="_blank" rel="noopener">
-                                📝 S'inscrire maintenant
-                            </a>
-                            <a href="dashboard.html" class="btn btn-secondary btn-large">
-                                📊 Voir le tableau de bord
-                            </a>
                         </div>
                     </div>
                 </div>
