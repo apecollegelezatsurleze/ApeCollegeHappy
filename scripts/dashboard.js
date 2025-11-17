@@ -2,41 +2,62 @@ class BalDashboard {
     constructor() {
         this.data = {
             total: 0,
-            byClass: {
-                "6°1": 0, "6°2": 0, "6°3": 0, "6°4": 0,
-                "5°1": 0, "5°2": 0, "5°3": 0,
-                "4°1": 0, "4°2": 0, "4°3": 0, "4°4": 0,
-                "3°1": 0, "3°2": 0, "3°3": 0
-            }
+            byClass: {},
+            classSizes: {
+                "6°1": 25, "6°2": 35, "6°3": 33, "6°4": 37,
+                "5°1": 32, "5°2": 41, "5°3": 39,
+                "4°1": 25, "4°2": 32, "4°3": 25, "4°4": 33,
+                "3°1": 37, "3°2": 45, "3°3": 42
+            },
+            participationRates: {}
         };
-        this.maxStudentsPerClass = 30; // Estimation
         this.goal = 200; // Objectif total d'inscriptions
+        this.apiUrl = 'https://script.google.com/macros/s/AKfycbypbknpwRvnYh6m0hCMt0VZL_vNrTcSiaHAdW1FLDkd7u3m7h4wTSWaf54PDML5TnhJsg/exec'; // Replace with your Web App URL
         
         this.init();
     }
 
     init() {
-        this.loadData();
-        this.render();
+        this.loadRealData();
         this.setupAutoRefresh();
     }
 
-    // Simuler le chargement des données
-    loadData() {
-        // Dans la réalité, vous récupéreriez ces données depuis une API
-        // Pour l'instant, simulation avec des données aléatoires
-        this.data.total = Math.floor(Math.random() * 150) + 50;
-        
-        // Répartir aléatoirement dans les classes
-        let remaining = this.data.total;
-        const classes = Object.keys(this.data.byClass);
-        
-        classes.forEach(className => {
-            const maxForClass = Math.min(remaining, Math.floor(Math.random() * 15) + 5);
-            this.data.byClass[className] = maxForClass;
-            remaining -= maxForClass;
-            if (remaining < 0) remaining = 0;
+    async loadRealData() {
+        try {
+            const response = await fetch(this.apiUrl);
+            const realData = await response.json();
+            
+            if (realData.error) {
+                console.error('Error fetching data:', realData.error);
+                this.loadFallbackData();
+                return;
+            }
+            
+            // Update with real data
+            this.data.total = realData.total || 0;
+            this.data.byClass = realData.byClass || {};
+            this.data.participationRates = realData.participationRates || {};
+            
+            // If class sizes aren't provided from API, use local ones
+            if (realData.classSizes) {
+                this.data.classSizes = realData.classSizes;
+            }
+            
+            this.render();
+            
+        } catch (error) {
+            console.error('Error loading data:', error);
+            this.loadFallbackData();
+        }
+    }
+
+    loadFallbackData() {
+        // Fallback to local data or show zeros
+        Object.keys(this.data.classSizes).forEach(className => {
+            this.data.byClass[className] = this.data.byClass[className] || 0;
+            this.data.participationRates[className] = this.data.participationRates[className] || 0;
         });
+        this.render();
     }
 
     render() {
@@ -55,8 +76,9 @@ class BalDashboard {
         }
         
         if (rateElement) {
-            const totalStudents = Object.keys(this.data.byClass).length * this.maxStudentsPerClass;
-            const rate = Math.round((this.data.total / totalStudents) * 100);
+            // Calculate total possible students
+            const totalStudents = Object.values(this.data.classSizes).reduce((sum, size) => sum + size, 0);
+            const rate = totalStudents > 0 ? Math.round((this.data.total / totalStudents) * 100) : 0;
             rateElement.textContent = rate + '%';
         }
     }
@@ -68,12 +90,14 @@ class BalDashboard {
         container.innerHTML = '';
         
         Object.entries(this.data.byClass).forEach(([className, count]) => {
-            const percentage = Math.round((count / this.maxStudentsPerClass) * 100);
+            const classSize = this.data.classSizes[className] || 1;
+            const percentage = this.data.participationRates[className] || Math.round((count / classSize) * 100);
+            
             const card = document.createElement('div');
             card.className = 'class-card';
             card.innerHTML = `
                 <div class="class-name">${className}</div>
-                <div class="class-count">${count}</div>
+                <div class="class-count">${count}/${classSize}</div>
                 <div class="progress-bar">
                     <div class="progress-fill" style="width: ${percentage}%"></div>
                 </div>
@@ -99,11 +123,11 @@ class BalDashboard {
         if (!topClassElement) return;
 
         let topClass = '';
-        let maxCount = 0;
+        let maxParticipation = 0;
         
-        Object.entries(this.data.byClass).forEach(([className, count]) => {
-            if (count > maxCount) {
-                maxCount = count;
+        Object.entries(this.data.participationRates).forEach(([className, rate]) => {
+            if (rate > maxParticipation) {
+                maxParticipation = rate;
                 topClass = className;
             }
         });
@@ -114,8 +138,7 @@ class BalDashboard {
     setupAutoRefresh() {
         // Actualiser les données toutes les 30 secondes
         setInterval(() => {
-            this.loadData();
-            this.render();
+            this.loadRealData();
         }, 30000);
     }
 }
