@@ -982,28 +982,28 @@ section:nth-child(even) {
     font-weight: bold;
 }
 
-/* Join Section - Expert UI/UX with Perfect Contrast */
-.join {
+/* Join Section - Expert UI/UX with Perfect Contrast - FIXED */
+section.join {
     background-color: var(--primary);
     color: var(--neutral-white);
     text-align: center;
 }
 
-.join .section-header h2 {
+section.join .section-header h2 {
     color: var(--neutral-white);
 }
 
-.join .section-header h2::after {
+section.join .section-header h2::after {
     background-color: var(--accent);
 }
 
-.join .section-header p {
+section.join .section-header p {
     color: var(--neutral-light);
     max-width: 700px;
     margin: 0 auto;
 }
 
-.get-involved {
+section.join .get-involved {
     background-color: transparent;
     padding: 0;
     border-radius: 0;
@@ -1011,14 +1011,14 @@ section:nth-child(even) {
     border-left: none;
 }
 
-.involvement-options {
+section.join .involvement-options {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: var(--spacing-md);
     margin-top: var(--spacing-lg);
 }
 
-.involvement-option {
+section.join .involvement-option {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 30px;
     border-radius: var(--border-radius);
@@ -1027,49 +1027,49 @@ section:nth-child(even) {
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.involvement-option:hover {
+section.join .involvement-option:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
     border-color: var(--accent);
     background-color: rgba(255, 255, 255, 0.15);
 }
 
-.involvement-option h4 {
+section.join .involvement-option h4 {
     color: var(--neutral-white);
     margin-bottom: 15px;
 }
 
-.involvement-option p {
+section.join .involvement-option p {
     color: var(--neutral-light);
     margin-bottom: var(--spacing-md);
 }
 
-.involvement-option .btn {
+section.join .involvement-option .btn {
     background-color: var(--neutral-white);
     color: var(--primary);
     margin-top: var(--spacing-sm);
     width: auto;
 }
 
-.involvement-option .btn:hover {
+section.join .involvement-option .btn:hover {
     background-color: var(--accent);
     color: var(--dark);
 }
 
 /* Compact Pricing Styles - Updated for light background */
-.pricing-compact {
+section.join .pricing-compact {
     margin-bottom: var(--spacing-sm);
     text-align: center;
 }
 
-.pricing-details {
+section.join .pricing-details {
     font-size: 1rem;
     color: var(--neutral-white);
     margin-bottom: 0.5rem;
     line-height: 1.4;
 }
 
-.pricing-example {
+section.join .pricing-example {
     font-size: 0.9rem;
     font-style: italic;
     color: var(--accent);
