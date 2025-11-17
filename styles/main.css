@@ -500,7 +500,7 @@ section:nth-child(even) {
     z-index: 2;
 }
 
-/* Registration Banner - Top Section */
+/* Registration Banner - Top Section - UPDATED LAYOUT */
 .registration-banner {
     background: rgba(255, 255, 255, 0.15);
     padding: var(--spacing-xxl);
@@ -508,12 +508,13 @@ section:nth-child(even) {
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-    display: grid;
-    grid-template-columns: 1fr auto;
+    display: flex;
+    flex-direction: column;
     gap: var(--spacing-xl);
     align-items: center;
     margin-bottom: var(--spacing-lg);
     transition: var(--transition);
+    text-align: center;
 }
 
 .registration-banner:hover {
@@ -524,7 +525,9 @@ section:nth-child(even) {
 .registration-stats {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: var(--spacing-xl);
+    width: 100%;
 }
 
 .counter-display {
@@ -562,6 +565,7 @@ section:nth-child(even) {
     font-size: 1.2rem;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: var(--spacing-sm);
 }
 
@@ -615,8 +619,11 @@ section:nth-child(even) {
 .registration-actions-compact {
     display: flex;
     gap: var(--spacing-md);
+    justify-content: center;
+    width: 100%;
 }
 
+/* IMPROVED BUTTON VISIBILITY */
 .registration-actions-compact .btn {
     padding: 16px 30px;
     font-size: 1.1rem;
@@ -629,11 +636,36 @@ section:nth-child(even) {
     white-space: nowrap;
     transition: var(--transition);
     box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    min-width: 220px;
+    justify-content: center;
 }
 
-.registration-actions-compact .btn:hover {
+.registration-actions-compact .btn-primary {
+    background-color: var(--accent);
+    color: var(--dark);
+    border: 2px solid var(--accent);
+}
+
+.registration-actions-compact .btn-primary:hover {
+    background-color: #ffd700;
+    color: var(--dark);
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+}
+
+.registration-actions-compact .btn-secondary {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--primary);
+    border: 2px solid var(--neutral-white);
+    font-weight: 700;
+}
+
+.registration-actions-compact .btn-secondary:hover {
+    background-color: var(--neutral-white);
+    color: var(--primary);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+    border-color: var(--accent);
 }
 
 /* Content Grid - Below the Banner */
@@ -1375,16 +1407,9 @@ section.join .pricing-example {
 }
 
 @media (max-width: 992px) {
-    .registration-banner {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: var(--spacing-lg);
-        padding: var(--spacing-xl);
-    }
-    
     .registration-stats {
-        justify-content: center;
-        flex-wrap: wrap;
+        flex-direction: column;
+        gap: var(--spacing-lg);
     }
     
     .progress-section {
@@ -1393,7 +1418,6 @@ section.join .pricing-example {
     }
     
     .registration-actions-compact {
-        justify-content: center;
         flex-wrap: wrap;
     }
     
@@ -1467,7 +1491,7 @@ section.join .pricing-example {
         border-bottom: none;
     }
     
-    /* Bal d'Hiver Mobile Optimizations - FIXED BUTTON CENTERING */
+    /* Bal d'Hiver Mobile Optimizations - UPDATED */
     .registration-stats {
         flex-direction: column;
         gap: var(--spacing-lg);
@@ -1499,21 +1523,13 @@ section.join .pricing-example {
     }
     
     .registration-actions-compact .btn {
-        justify-content: center;
         width: 100%;
         max-width: 280px;
         margin: 0 auto;
         text-align: center;
         display: flex;
         align-items: center;
-    }
-    
-    /* Ensure perfect centering for registration buttons */
-    .registration-banner {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        justify-content: center;
     }
     
     .details-grid {
@@ -1641,6 +1657,7 @@ section.join .pricing-example {
         max-width: 100%;
         padding: 14px 20px;
         font-size: 1rem;
+        min-width: auto;
     }
     
     .event-details-card,
