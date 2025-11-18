@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2c5aa0">
+    <meta name="description" content="Inscription au Bal d'Hiver 2025 - APE François-Verdier">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <title>Inscription Bal d'Hiver 2025 - APE François-Verdier</title>
+    
+    <style>
+        /* Additional styles for the embedded form page */
+        .form-hero {
+            background: linear-gradient(rgba(44, 90, 160, 0.85), rgba(44, 90, 160, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--neutral-white);
+            text-align: center;
+            padding: var(--spacing-xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .form-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: var(--spacing-xl);
+        }
+        
+        .form-wrapper {
+            background-color: var(--neutral-white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .form-iframe {
+            width: 100%;
+            height: 1500px;
+            border: none;
+            display: block;
+        }
+        
+        .form-navigation {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        
+        @media (max-width: 768px) {
+            .form-iframe {
+                height: 1800px;
+            }
+            
+            .form-container {
+                padding: var(--spacing-md);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .form-iframe {
+                height: 2000px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="https://apecollegehappy.fr/">
+                        <img src="images/logo.png" alt="APE François-Verdier - Association des Parents d'Élèves" width="50" height="50">
+                        <h1>APE François-Verdier</h1>
+                    </a>
+                </div>
+                <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="navigation" aria-label="Navigation principale">
+                    <ul class="nav-list">
+                        <li><a href="apecollegehappy.fr#accueil" class="nav-link">Accueil</a></li>
+                        <li><a href="apecollegehappy.fr#a-propos" class="nav-link">À propos</a></li>
+                        <li><a href="apecollegehappy.fr#bal-d-hiver" class="nav-link">Bal d'Hiver</a></li>
+                        <li><a href="apecollegehappy.fr#evenements" class="nav-link">Événements</a></li>
+                        <li><a href="apecollegehappy.fr#ressources" class="nav-link">Ressources</a></li>
+                        <li><a href="apecollegehappy.fr#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Form Hero Section -->
+        <section class="form-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-logo">
+                        <img src="images/logo.png" alt="APE François-Verdier" width="200" height="200">
+                    </div>
+                    <h1>Inscription au Bal d'Hiver 2025</h1>
+                    <p class="hero-subtitle">Collège François Verdier - Lézat-sur-Lèze</p>
+                    <p class="hero-description">Une soirée magique sur le thème "Neige, Glace et Banquise" ❄️</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form Section -->
+        <section class="form-section">
+            <div class="form-container">
+                <div class="section-header">
+                    <h2>Formulaire d'inscription</h2>
+                    <p>Remplissez ce formulaire pour inscrire votre enfant au Bal d'Hiver 2025</p>
+                </div>
+                
+                <div class="form-wrapper">
+                    <iframe class="form-iframe" 
+                            src="https://docs.google.com/forms/d/e/1FAIpQLSdZ4D-ixbEVdZY7HhvZ9Zx1HuAlyAHVlCPLsO4nBZ-5nhwTHw/viewform?embedded=true" 
+                            frameborder="0" 
+                            marginheight="0" 
+                            marginwidth="0">
+                        Chargement en cours...
+                    </iframe>
+                </div>
+                
+                <div class="form-navigation">
+                    <a href="apecollegehappy.fr#bal-d-hiver" class="btn btn-secondary">Retour au site</a>
+                    <a href="dashboard.html" class="btn btn-primary">Voir le tableau de bord</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="APE François-Verdier" width="80" height="80">
+                    </div>
+                    <h3>APE François-Verdier</h3>
+                    <p>Association des Parents d'Élèves du collège François Verdier de Lézat-sur-Lèze</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="apecollegehappy.fr#accueil">Accueil</a></li>
+                        <li><a href="apecollegehappy.fr#a-propos">À propos</a></li>
+                        <li><a href="apecollegehappy.fr#evenements">Événements</a></li>
+                        <li><a href="apecollegehappy.fr#ressources">Ressources</a></li>
+                        <li><a href="apecollegehappy.fr#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>Email: <a href="mailto:contact@apecollegehappy.fr">contact@apecollegehappy.fr</a></p>
+                    <p>Adresse: Collège François Verdier, Lézat-sur-Lèze</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 APE François-Verdier. Tous droits réservés.</p>
+                <div class="footer-attribution">
+                    <p>Site web créé en Ariège par <a href="https://web.izutech.fr" target="_blank" rel="noopener">IzuTech</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="scripts/main.js"></script>
+    
+    <!-- Form-specific JavaScript -->
+    <script>
+        // Adjust iframe height based on content for better mobile experience
+        window.addEventListener('load', function() {
+            const iframe = document.querySelector('.form-iframe');
+            
+            // Function to adjust iframe height
+            function adjustIframeHeight() {
+                if (window.innerWidth < 768) {
+                    iframe.style.height = '1800px';
+                } else if (window.innerWidth < 480) {
+                    iframe.style.height = '2000px';
+                } else {
+                    iframe.style.height = '1500px';
+                }
+            }
+            
+            // Adjust on load and resize
+            adjustIframeHeight();
+            window.addEventListener('resize', adjustIframeHeight);
+        });
+    </script>
+</body>
+</html>
