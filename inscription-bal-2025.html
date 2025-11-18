@@ -137,18 +137,22 @@
                 </div>
                 
                 <div class="form-wrapper">
+                    <div class="form-loading" style="display: none;">
+                        <p>Chargement du formulaire...</p>
+                    </div>
                     <iframe class="form-iframe" 
                             src="https://docs.google.com/forms/d/e/1FAIpQLSdZ4D-ixbEVdZY7HhvZ9Zx1HuAlyAHVlCPLsO4nBZ-5nhwTHw/viewform?embedded=true" 
                             frameborder="0" 
                             marginheight="0" 
-                            marginwidth="0">
+                            marginwidth="0"
+                            onload="document.querySelector('.form-loading').style.display='none'">
                         Chargement en cours...
                     </iframe>
                 </div>
                 
                 <div class="form-navigation">
                     <a href="/#bal-d-hiver" class="btn btn-secondary">Retour au site</a>
-                    <a href="dashboard.html" class="btn btn-primary">Voir le tableau de bord</a>
+                    <a href="/dashboard.html" class="btn btn-primary">Voir le tableau de bord</a>
                 </div>
             </div>
         </section>
