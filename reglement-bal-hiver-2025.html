@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- FAVICON LINES -->
+    
+    <!-- FAVICON -->
     <link rel="preload" href="images/logo.png" as="image">
     <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="apple-touch-icon" href="images/logo.png">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <!-- END FAVICON LINES -->
+    
     <title>Règlement Intérieur - Bal d'Hiver 2025</title>
     <style>
         * {
@@ -23,12 +24,51 @@
             background: linear-gradient(135deg, #e6f7ff 0%, #f0f8ff 100%);
             color: #333;
             line-height: 1.6;
-            padding: 20px;
+        }
+        
+        /* ADDED NAVIGATION HEADER STYLES */
+        .nav-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .nav-brand {
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .back-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .back-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
         }
         
         .container {
             max-width: 900px;
-            margin: 0 auto;
+            margin: 20px auto;
             background: white;
             border-radius: 15px;
             box-shadow: 0 5px 25px rgba(0, 0, 100, 0.1);
@@ -208,14 +248,17 @@
     </style>
 </head>
 <body>
-    <div style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); padding: 15px 0; margin-bottom: 20px;">
-        <div style="max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
-            <a href="https://apecollegehappy.fr/" style="color: white; text-decoration: none; font-weight: bold; display: flex; align-items: center; gap: 10px;">
+    <div class="nav-header">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span>APE François-Verdier</span>
+            </div>
+            <a href="https://apecollegehappy.fr/" class="back-link">
                 ← Retour au site principal
             </a>
-            <div style="color: white; font-weight: bold;">APE François-Verdier</div>
         </div>
     </div>
+    
     <div class="container">
         <header>
             <h1>Règlement Intérieur</h1>
