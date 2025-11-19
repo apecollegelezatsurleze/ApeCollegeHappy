@@ -1503,16 +1503,25 @@ section.join .pricing-example {
         font-size: 3.5rem;
     }
     
+    .counter-progress .progress-bar {
+        flex: none; /* Remove flex property */
+        width: 100%; /* Ensure full width */
+        height: 20px; /* Explicit height */
+        margin-bottom: var(--spacing-sm);
+    }
+    
     .counter-progress {
-        flex-direction: column;
-        gap: var(--spacing-md);
-        padding: var(--spacing-lg);
-        width: 100%;
+        align-items: stretch; /* Make children stretch to full width */
     }
     
     .counter-progress span {
-        min-width: auto;
-        font-size: 1.3rem;
+        text-align: center;
+        margin-top: var(--spacing-sm);
+    }
+    
+    /* Ensure progress fill is visible */
+    .counter-progress .progress-fill {
+        min-width: 5%; /* Minimum width so it's always visible */
     }
     
     .registration-actions-compact {
