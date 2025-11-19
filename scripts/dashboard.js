@@ -12,7 +12,7 @@ class BalDashboard {
             participationRates: {}
         };
         this.goal = 200; // Objectif total d'inscriptions
-        this.apiUrl = 'https://script.google.com/macros/s/AKfycbypbknpwRvnYh6m0hCMt0VZL_vNrTcSiaHAdW1FLDkd7u3m7h4wTSWaf54PDML5TnhJsg/exec'; // Replace with your Web App URL
+        this.apiUrl = 'https://script.google.com/macros/s/AKfycbxZlrpNcTqcLBRku98EwHoYpoQ_gZNnAaAxwv3hVO3UCPozZNRRFqSUTzjCNyysfo1QFQ/exec'; // Replace with your Web App URL
         
         this.init();
     }
