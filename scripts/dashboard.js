@@ -24,7 +24,12 @@ class BalDashboard {
 
     async loadRealData() {
         try {
-            const response = await fetch(this.apiUrl);
+            const response = await fetch(this.apiUrl, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8'
+                }
+            });
             const realData = await response.json();
             
             if (realData.error) {
