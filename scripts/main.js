@@ -1,4 +1,4 @@
-// Main JavaScript for APE François-Verdier website
+// Main JavaScript for APE François-Verdier website 
 
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile navbar scroll behavior
