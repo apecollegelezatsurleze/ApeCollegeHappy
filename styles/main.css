@@ -1538,6 +1538,13 @@ section.join .pricing-example {
         text-align: center;
         margin-bottom: var(--spacing-md);
     }
+    
+    /* Make sure the progress fill is visible */
+    .counter-progress .progress-fill {
+        display: block !important;
+        min-width: 5px; /* Always show something */
+    }
+    
     .registration-actions-compact {
         flex-direction: column;
         width: 100%;
