@@ -1,7 +1,7 @@
 // scripts/bal-counter.js
 class BalCounter {
     constructor() {
-        this.apiUrl = 'https://script.google.com/macros/s/AKfycbypbknpwRvnYh6m0hCMt0VZL_vNrTcSiaHAdW1FLDkd7u3m7h4wTSWaf54PDML5TnhJsg/exec';
+        this.apiUrl = 'https://script.google.com/macros/s/AKfycbzWccyjFEkVqdJpmczlOKP1ZuTCoeveRKXiN79jgKqIURse170q9iC7MH_CHPL-SPXOhw/exec';
         this.goal = 200;
         this.init();
     }
