@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2c5aa0">
+    <meta name="description" content="Galerie photo de l'APE François-Verdier - Moments de la vie au collège François Verdier de Lézat-sur-Lèze">
+
+    <link rel="preload" href="images/logo.png" as="image">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <title>Galerie Photo - APE François-Verdier</title>
+</head>
+<body>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/logo.png" alt="APE François-Verdier - Association des Parents d'Élèves" width="50" height="50">
+                    <h1>APE François-Verdier</h1>
+                </div>
+                <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="navigation" aria-label="Navigation principale">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Accueil</a></li>
+                        <li><a href="index.html#a-propos" class="nav-link">À propos</a></li>
+                        <li><a href="index.html#bal-d-hiver" class="nav-link">Bal d'Hiver</a></li>
+                        <li><a href="index.html#evenements" class="nav-link">Événements</a></li>
+                        <li><a href="gallery.html" class="nav-link active">Galerie</a></li>
+                        <li><a href="index.html#ressources" class="nav-link">Ressources</a></li>
+                        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Gallery Hero Section -->
+        <section class="gallery-hero">
+            <div class="container">
+                <div class="gallery-hero-content">
+                    <h1>Galerie Photo</h1>
+                    <p class="gallery-subtitle">Découvrez les moments forts de la vie au collège</p>
+                    <p class="gallery-description">Retrouvez ici tous les souvenirs des événements organisés par l'APE et la vie scolaire de vos enfants.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Navigation -->
+        <section class="events-nav">
+            <div class="container">
+                <div class="events-filter">
+                    <button class="filter-btn active" data-filter="all">Tous les événements</button>
+                    <button class="filter-btn" data-filter="olympiade-2024">Olympiade 2024</button>
+                    <!-- Add more filter buttons as you add more events -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Gallery -->
+        <section class="main-gallery">
+            <div class="container">
+                <!-- Olympiade 2024 Album -->
+                <div class="album-section" id="olympiade-2024">
+                    <div class="album-header">
+                        <h2>Olympiade 2024</h2>
+                        <p>15 photos - Juin 2024</p>
+                    </div>
+                    
+                    <div class="gallery-grid">
+                        <!-- Photos 1-15 -->
+                        <div class="gallery-item">
+                            <img src="images/events/Olympiade 2024/Olympiade 2024 - 1.jpg" alt="Olympiade 2024 - Épreuve sportive" loading="lazy">
+                            <div class="gallery-overlay">
+                                <span class="photo-caption">Épreuve sportive</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/events/Olympiade 2024/Olympiade 2024 - 2.jpg" alt="Olympiade 2024 - Compétition d'équipe" loading="lazy">
+                            <div class="gallery-overlay">
+                                <span class="photo-caption">Compétition d'équipe</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/events/Olympiade 2024/Olympiade 2024 - 3.jpg" alt="Olympiade 2024 - Cérémonie d'ouverture" loading="lazy">
+                            <div class="gallery-overlay">
+                                <span class="photo-caption">Cérémonie d'ouverture</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/events/Olympiade 2024/Olympiade 2024 - 4.jpg" alt="Olympiade 2024 - Équipe gagnante" loading="lazy">
+                            <div class="gallery-overlay">
+                                <span class="photo-caption">Équipe gagnante</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/events/Olympiade 2024/Olympiade 2024 - 5.jpg" alt="Olympiade 2024 - Activité collective" loading="lazy">
+                            <div class="gallery-overlay">
+                                <span class="photo-caption">Activité collective</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/events/Olympiade 2024/Olympiade 2024 - 6.jpg" alt="Olympiade 2024 - Félicitations" loading="lazy">
+                            <div class="gallery-overlay">
+                                <span class="photo-caption">Félicitations</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/events/Olympiade 2024/Olympiade 2024 - 7.jpg" alt="Olympiade 2024 - Moment de détente" loading="lazy">
+                            <div class="gallery-overlay">
+                                <span class="photo-caption">Moment de détente</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/events/Olympiade 2024/Olympiade 2024 - 8.jpg" alt="Olympiade 2024 - Défi sportif" loading="lazy">
+                            <div class="gallery-overlay">
+                                <span class="photo-caption">Défi sportif</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/events/Olympiade 2024/Olympiade 2024 - 9.jpg" alt="Olympiade 2024 - Esprit d'équipe" loading="lazy">
+                            <div class="gallery-overlay">
+                                <span class="photo-caption">Esprit d'équipe</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/events/Olympiade 2024/Olympiade 2024 - 10.jpg" alt="Olympiade 2024 - Concentration" loading="lazy">
+                            <div class="gallery-overlay">
+                                <span class="photo-caption">Concentration</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/events/Olympiade 2024/Olympiade 2024 - 11.jpg" alt="Olympiade 2024 - Jeu d'adresse" loading="lazy">
+                            <div class="gallery-overlay">
+                                <span class="photo-caption">Jeu d'adresse</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/events/Olympiade 2024/Olympiade 2024 - 12.jpg" alt="Olympiade 2024 - Course finale" loading="lazy">
+                            <div class="gallery-overlay">
+                                <span class="photo-caption">Course finale</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/events/Olympiade 2024/Olympiade 2024 - 13.jpg" alt="Olympiade 2024 - Remise des prix" loading="lazy">
+                            <div class="gallery-overlay">
+                                <span class="photo-caption">Remise des prix</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/events/Olympiade 2024/Olympiade 2024 - 14.jpg" alt="Olympiade 2024 - Souvenirs" loading="lazy">
+                            <div class="gallery-overlay">
+                                <span class="photo-caption">Souvenirs</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/events/Olympiade 2024/Olympiade 2024 - 15.jpg" alt="Olympiade 2024 - Clôture" loading="lazy">
+                            <div class="gallery-overlay">
+                                <span class="photo-caption">Clôture</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Future events will be added here -->
+                <div class="coming-soon">
+                    <h3>D'autres événements à venir...</h3>
+                    <p>La galerie sera régulièrement mise à jour avec les nouveaux événements de l'année scolaire.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Back to Home CTA -->
+        <section class="gallery-cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Vous avez des photos à partager ?</h2>
+                    <p>Contactez-nous si vous souhaitez partager vos photos des événements du collège.</p>
+                    <a href="index.html#contact" class="btn btn-primary">Nous contacter</a>
+                    <a href="index.html" class="btn btn-secondary">Retour à l'accueil</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="APE François-Verdier" width="80" height="80">
+                    </div>
+                    <h3>APE François-Verdier</h3>
+                    <p>Association des Parents d'Élèves du collège François Verdier de Lézat-sur-Lèze</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="index.html#a-propos">À propos</a></li>
+                        <li><a href="index.html#evenements">Événements</a></li>
+                        <li><a href="gallery.html">Galerie</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>Email: <a href="mailto:contact@apecollegehappy.fr">contact@apecollegehappy.fr</a></p>
+                    <p>Adresse: Collège François Verdier, Lézat-sur-Lèze</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 APE François-Verdier. Tous droits réservés.</p>
+                <div class="footer-attribution">
+                    <p>Site web créé en Ariège par <a href="https://web.izutech.fr" target="_blank" rel="noopener">IzuTech</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/gallery.js"></script>
+</body>
+</html>
