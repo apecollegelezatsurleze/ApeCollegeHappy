@@ -1504,39 +1504,40 @@ section.join .pricing-example {
     }
     
     /* Mobile progress bar fixes */
+    .counter-progress {
+        flex-direction: column; /* Stack vertically */
+        align-items: stretch;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-md);
+    }
+    
+    .counter-progress .progress-bar {
+        flex: none; /* Remove flex growing */
+        width: 100%;
+        height: 20px;
+        order: 1; /* Progress bar first */
+    }
+    
+    .counter-progress span {
+        order: 2; /* Percentage text second */
+        text-align: center;
+        margin-top: 0;
+        min-width: auto;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--accent);
+    }
+    
+    /* Ensure progress section layout is correct */
     .progress-section {
         width: 100%;
         max-width: none;
     }
     
-    .counter-progress {
-        flex-direction: column;
-        align-items: stretch;
-        gap: var(--spacing-md);
-        padding: var(--spacing-lg);
-    }
-    
-    .counter-progress .progress-bar {
-        flex: none;
-        width: 100%;
-        height: 20px;
-        order: 1; /* Ensure it comes first */
-    }
-    
-    .counter-progress span {
-        order: 2; /* Ensure percentage comes after */
+    .progress-section h4 {
         text-align: center;
-        font-size: 1.2rem;
-        font-weight: 700;
-        color: var(--accent);
+        margin-bottom: var(--spacing-md);
     }
-    
-    /* Make sure the progress fill is visible */
-    .counter-progress .progress-fill {
-        display: block !important;
-        min-width: 5px; /* Always show something */
-    }
-    
     .registration-actions-compact {
         flex-direction: column;
         width: 100%;
