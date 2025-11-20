@@ -1020,23 +1020,9 @@ section:nth-child(even) {
     margin-bottom: var(--spacing-lg);
 }
 
-.event-description ul {
-    margin-left: 20px;
-    margin-bottom: var(--spacing-md);
-}
-
-.event-description li {
-    margin-bottom: 8px;
-    position: relative;
-    padding-left: 5px;
-}
-
-.event-description li::before {
-    content: '•';
-    color: #2c5aa0;
-    font-weight: bold;
-    position: absolute;
-    left: -15px;
+.event-description p {
+    line-height: 1.6;
+    margin-bottom: 0;
 }
 
 .participation-call {
@@ -1044,6 +1030,12 @@ section:nth-child(even) {
     padding: var(--spacing-lg);
     border-radius: var(--border-radius);
     border-left: 4px solid var(--accent);
+    transition: var(--transition);
+}
+
+.participation-call:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .participation-call h5 {
@@ -1062,6 +1054,26 @@ section:nth-child(even) {
 
 .participation-call strong {
     color: var(--primary);
+}
+
+.participation-call a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.participation-call a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.calendar-section {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: var(--light);
+    border-radius: var(--border-radius);
 }
 
 /* Resources Section */
