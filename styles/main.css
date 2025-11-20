@@ -973,6 +973,97 @@ section:nth-child(even) {
     border-radius: var(--border-radius);
 }
 
+/* Marché de Noël Event Styles */
+.noel-event {
+    background: linear-gradient(135deg, #e8f4fd 0%, #f0f8ff 100%);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    border-left: 6px solid #2c5aa0;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.noel-event:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.noel-event h4 {
+    color: #2c5aa0;
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.event-details {
+    background: rgba(255, 255, 255, 0.7);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-md);
+}
+
+.event-details p {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.event-details strong {
+    min-width: 80px;
+    color: #2c5aa0;
+}
+
+.event-description {
+    margin-bottom: var(--spacing-lg);
+}
+
+.event-description ul {
+    margin-left: 20px;
+    margin-bottom: var(--spacing-md);
+}
+
+.event-description li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 5px;
+}
+
+.event-description li::before {
+    content: '•';
+    color: #2c5aa0;
+    font-weight: bold;
+    position: absolute;
+    left: -15px;
+}
+
+.participation-call {
+    background: rgba(248, 195, 0, 0.1);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--accent);
+}
+
+.participation-call h5 {
+    color: var(--primary);
+    font-size: 1.4rem;
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.participation-call p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+}
+
+.participation-call strong {
+    color: var(--primary);
+}
+
 /* Resources Section */
 .resources-grid {
     display: grid;
@@ -1375,7 +1466,7 @@ section.join .pricing-example {
         gap: var(--spacing-lg);
     }
     
-    .bal-hero {
+    .bal-hero-single {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
     }
