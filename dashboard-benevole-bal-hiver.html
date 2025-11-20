@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord - Bal d'Hiver 2025</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 1.1em;
+        }
+        
+        .chart-container {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+        }
+        
+        .chart-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-size: 1.4em;
+        }
+        
+        .section-title {
+            color: white;
+            margin: 40px 0 20px 0;
+            font-size: 1.8em;
+            text-align: center;
+        }
+        
+        .progress-bar {
+            background: #ecf0f1;
+            border-radius: 10px;
+            height: 20px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            transition: width 0.5s ease;
+        }
+        
+        .list-container {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .list-item {
+            padding: 15px;
+            border-bottom: 1px solid #ecf0f1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .list-item:last-child {
+            border-bottom: none;
+        }
+        
+        .badge {
+            background: #3498db;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .chart-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bal d'Hiver 2025</h1>
+            <p class="subtitle">Tableau de Bord des Inscriptions et Bénévoles</p>
+            <p id="last-update">Dernière mise à jour: <span id="update-time"></span></p>
+        </header>
+
+        <!-- Statistics Overview -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="total-inscriptions">0</div>
+                <div class="stat-label">Total des Inscriptions</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="parents-benevoles">0</div>
+                <div class="stat-label">Parents Bénévoles</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="eleves-volontaires">0</div>
+                <div class="stat-label">Élèves Volontaires</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="taux-participation">0%</div>
+                <div class="stat-label">Taux de Participation</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Répartition par Rôle</h2>
+        
+        <!-- Charts Section -->
+        <div class="chart-grid">
+            <div class="chart-container">
+                <div class="chart-title">Bénévoles Parents</div>
+                <canvas id="parentsChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">Élèves Volontaires</div>
+                <canvas id="elevesChart"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-grid">
+            <div class="chart-container">
+                <div class="chart-title">Contributions Alimentaires</div>
+                <canvas id="nourritureChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">Droit à l'Image</div>
+                <canvas id="droitImageChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Detailed Lists -->
+        <h2 class="section-title">Détails par Classe</h2>
+        <div class="list-container">
+            <div id="classes-list">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <h2 class="section-title">Besoens en Bénévoles</h2>
+        <div class="list-container">
+            <div id="besoins-list">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample data - you would replace this with actual data from your Google Sheets
+        const dashboardData = {
+            totalInscriptions: 150,
+            parentsBenevoles: 45,
+            elevesVolontaires: 67,
+            tauxParticipation: '30%',
+            
+            parentsCategories: {
+                'Décoration': 12,
+                'Installation': 8,
+                'Encadrement': 15,
+                'Accueil': 6,
+                'Photographe': 4,
+                'Nourriture': 18,
+                'Nettoyage': 9
+            },
+            
+            elevesCategories: {
+                'Décoration': 15,
+                'Ambiance': 12,
+                'Élection royale': 8,
+                'Junior référents': 10,
+                'Accueil': 7,
+                'Photographe': 5,
+                'Logistique': 10
+            },
+            
+            nourriture: {
+                'Boissons': 25,
+                'Gâteaux': 32,
+                'Autre': 8
+            },
+            
+            droitImage: {
+                'Autorisé': 120,
+                'Refusé': 30
+            },
+            
+            classes: {
+                '6ème1': 18,
+                '6ème2': 22,
+                '5ème1': 25,
+                '5ème2': 20,
+                '4ème1': 28,
+                '4ème2': 19,
+                '3ème1': 18
+            },
+            
+            besoinsCritiques: [
+                { role: 'Encadrement', actuels: 15, necessaires: 25, pourcentage: 60 },
+                { role: 'Nourriture', actuels: 18, necessaires: 30, pourcentage: 60 },
+                { role: 'Nettoyage', actuels: 9, necessaires: 15, pourcentage: 60 },
+                { role: 'Installation', actuels: 8, necessaires: 12, pourcentage: 67 }
+            ]
+        };
+
+        // Initialize the dashboard
+        function initDashboard() {
+            // Update basic stats
+            document.getElementById('total-inscriptions').textContent = dashboardData.totalInscriptions;
+            document.getElementById('parents-benevoles').textContent = dashboardData.parentsBenevoles;
+            document.getElementById('eleves-volontaires').textContent = dashboardData.elevesVolontaires;
+            document.getElementById('taux-participation').textContent = dashboardData.tauxParticipation;
+            
+            // Update last modified time
+            document.getElementById('update-time').textContent = new Date().toLocaleString('fr-FR');
+            
+            // Create charts
+            createCharts();
+            
+            // Populate lists
+            populateLists();
+        }
+
+        function createCharts() {
+            // Parents Chart
+            new Chart(document.getElementById('parentsChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(dashboardData.parentsCategories),
+                    datasets: [{
+                        data: Object.values(dashboardData.parentsCategories),
+                        backgroundColor: [
+                            '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0',
+                            '#9966FF', '#FF9F40', '#FF6384'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right'
+                        }
+                    }
+                }
+            });
+
+            // Students Chart
+            new Chart(document.getElementById('elevesChart'), {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(dashboardData.elevesCategories),
+                    datasets: [{
+                        label: 'Élèves',
+                        data: Object.values(dashboardData.elevesCategories),
+                        backgroundColor: '#3498db'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Food Chart
+            new Chart(document.getElementById('nourritureChart'), {
+                type: 'pie',
+                data: {
+                    labels: Object.keys(dashboardData.nourriture),
+                    datasets: [{
+                        data: Object.values(dashboardData.nourriture),
+                        backgroundColor: ['#2ecc71', '#e74c3c', '#f39c12']
+                    }]
+                }
+            });
+
+            // Image Rights Chart
+            new Chart(document.getElementById('droitImageChart'), {
+                type: 'pie',
+                data: {
+                    labels: Object.keys(dashboardData.droitImage),
+                    datasets: [{
+                        data: Object.values(dashboardData.droitImage),
+                        backgroundColor: ['#27ae60', '#c0392b']
+                    }]
+                }
+            });
+        }
+
+        function populateLists() {
+            // Classes list
+            const classesList = document.getElementById('classes-list');
+            Object.entries(dashboardData.classes).forEach(([classe, count]) => {
+                const item = document.createElement('div');
+                item.className = 'list-item';
+                item.innerHTML = `
+                    <span>${classe}</span>
+                    <span class="badge">${count} élèves</span>
+                `;
+                classesList.appendChild(item);
+            });
+
+            // Needs list
+            const besoinsList = document.getElementById('besoins-list');
+            dashboardData.besoinsCritiques.forEach(besoin => {
+                const item = document.createElement('div');
+                item.className = 'list-item';
+                item.innerHTML = `
+                    <div>
+                        <strong>${besoin.role}</strong>
+                        <div>${besoin.actuels} / ${besoin.necessaires} bénévoles</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${besoin.pourcentage}%"></div>
+                        </div>
+                    </div>
+                    <span class="badge">${besoin.pourcentage}%</span>
+                `;
+                besoinsList.appendChild(item);
+            });
+        }
+
+        // Initialize dashboard when page loads
+        document.addEventListener('DOMContentLoaded', initDashboard);
+
+        // Auto-refresh every 5 minutes
+        setInterval(initDashboard, 300000);
+    </script>
+</body>
+</html>
