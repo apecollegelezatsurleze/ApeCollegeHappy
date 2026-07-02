@@ -1,50 +1,240 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2c5aa0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2c5aa0" />
 
-    <meta name="description" content="APE du collège François-Verdier à Lézat-sur-Lèze. Association des Parents d'Élèves : informations, événements, bal d'hiver, adhésion et contact.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://apecollegehappy.fr/">
+    <meta name="description" content="APE du collège François-Verdier à Lézat-sur-Lèze. Association des Parents d'Élèves : informations, événements, bal d'hiver, adhésion et contact." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://apecollegehappy.fr/" />
 
     <!-- Google Search Console verification -->
-    <meta name="google-site-verification" content="TBW-ufhzspgf7_gtEmXUoKC6rkOJuw2rtE3xY787YEw">
+    <meta name="google-site-verification" content="TBW-ufhzspgf7_gtEmXUoKC6rkOJuw2rtE3xY787YEw" />
 
     <!-- Open Graph tags for social sharing -->
-    <meta property="og:title" content="APE François-Verdier - Association Parents d'Élèves | Collège Lézat-sur-Lèze">
-    <meta property="og:description" content="Association des Parents d'Élèves du collège François Verdier à Lézat-sur-Lèze">
-    <meta property="og:url" content="https://apecollegehappy.fr/">
-    <meta property="og:type" content="website">
-    <link rel="preload" href="images/logo.png" as="image">
+    <meta property="og:title" content="APE François-Verdier - Association Parents d'Élèves | Collège Lézat-sur-Lèze" />
+    <meta property="og:description" content="Association des Parents d'Élèves du collège François Verdier à Lézat-sur-Lèze" />
+    <meta property="og:url" content="https://apecollegehappy.fr/" />
+    <meta property="og:type" content="website" />
+    <link rel="preload" href="images/logo.png" as="image" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="apple-touch-icon" href="images/logo.png">
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/main.css" />
 
-    <!-- OPTIMIZED TITLE - Clear hierarchy with location -->
     <title>APE Collège Lézat-sur-Lèze | Association Parents d'Élèves François-Verdier</title>
+    <style>
+        /* Quick layout tweaks */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            align-items: start;
+        }
+        .about-text {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+        .team-section {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+        .team-transition-banner {
+            background: rgba(255, 215, 0, 0.15);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-md);
+            border-left: 4px solid var(--accent);
+            margin-bottom: var(--spacing-sm);
+        }
+        .team-transition-banner h3 {
+            margin-bottom: var(--spacing-xs);
+            color: var(--accent);
+        }
+        .team-transition-banner p {
+            margin-bottom: var(--spacing-xs);
+            font-size: 0.95rem;
+        }
+        .team-transition-banner .btn {
+            margin-top: var(--spacing-xs);
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: var(--spacing-md);
+        }
+        .team-member .member-note {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-top: var(--spacing-xs);
+            font-style: italic;
+        }
+        /* Past event – compact */
+        .past-event-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .past-event-header {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+        .past-event-header h3 {
+            margin: 0;
+            font-size: 1.6rem;
+        }
+        .past-event-badge {
+            background: var(--accent);
+            color: var(--dark);
+            font-weight: 700;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            display: inline-block;
+            letter-spacing: 0.5px;
+        }
+        .past-event-theme {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin: 0;
+        }
+        .flyer-container {
+            max-width: 400px;
+            margin: 0 auto var(--spacing-md);
+            text-align: center;
+        }
+        .flyer-container img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius-md);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+        .past-event-details-compact {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-sm);
+            background: rgba(0, 0, 0, 0.2);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-md);
+            margin-bottom: var(--spacing-md);
+        }
+        .past-event-details-compact .detail-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+        .past-event-details-compact .detail-icon {
+            font-size: 1.2rem;
+        }
+        .past-event-details-compact .detail-content {
+            font-size: 0.95rem;
+        }
+        .past-event-details-compact .detail-content strong {
+            display: inline;
+            margin-right: 0.25rem;
+        }
+        .past-event-program-compact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm) var(--spacing-lg);
+            background: rgba(0, 0, 0, 0.15);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-md);
+            margin-bottom: var(--spacing-md);
+        }
+        .past-event-program-compact h4 {
+            width: 100%;
+            margin: 0 0 var(--spacing-xs) 0;
+            font-size: 1rem;
+        }
+        .past-event-program-compact ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm) var(--spacing-lg);
+        }
+        .past-event-program-compact ul li {
+            font-size: 0.95rem;
+        }
+        .past-event-program-compact ul li::before {
+            content: "• ";
+            color: var(--accent);
+        }
+        .past-event-photos-link {
+            text-align: center;
+            margin: var(--spacing-md) 0 var(--spacing-sm);
+        }
+        .past-event-footer {
+            text-align: center;
+            opacity: 0.7;
+            font-size: 0.95rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+        .thanks-banner-compact {
+            text-align: center;
+            background: rgba(255, 215, 0, 0.08);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-md);
+            margin-bottom: var(--spacing-md);
+            border: 1px solid rgba(255, 215, 0, 0.15);
+        }
+        .thanks-banner-compact h3 {
+            margin: 0 0 var(--spacing-xs) 0;
+            color: var(--accent);
+        }
+        .thanks-banner-compact p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            .past-event-details-compact {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .past-event-details-compact {
+                grid-template-columns: 1fr;
+            }
+            .past-event-program-compact ul {
+                flex-direction: column;
+                gap: var(--spacing-xs);
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Skip to main content -->
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
 
-    <!-- CLEAN ORIGINAL NAVIGATION - Better for homepage -->
+    <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="images/logo.png" alt="APE François-Verdier - Association des Parents d'Élèves" width="50" height="50">
+                    <img src="images/logo.png" alt="APE François-Verdier - Association des Parents d'Élèves" width="50" height="50" />
                     <h1>APE François-Verdier</h1>
                 </div>
                 <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
@@ -67,12 +257,12 @@
     </header>
 
     <main id="main-content">
-        <!-- Hero Section -->
+        <!-- Hero -->
         <section id="accueil" class="hero">
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-logo">
-                        <img src="images/logo.png" alt="APE François-Verdier - Association des Parents d'Élèves" width="400" height="400">
+                        <img src="images/logo.png" alt="APE François-Verdier - Association des Parents d'Élèves" width="400" height="400" />
                     </div>
                     <h1>APE François-Verdier</h1>
                     <p class="hero-subtitle">Association des Parents d'Élèves du collège François Verdier de Lézat-sur-Lèze</p>
@@ -85,13 +275,14 @@
             </div>
         </section>
 
-        <!-- About Section -->
+        <!-- About -->
         <section id="a-propos" class="about">
             <div class="container">
                 <div class="section-header">
                     <h2>À propos de notre association</h2>
                 </div>
                 <div class="about-content">
+                    <!-- Left: Mission -->
                     <div class="about-text">
                         <h3>Notre mission</h3>
                         <p>L'Association des Parents d'Élèves (APE) du collège François Verdier de Lézat-sur-Lèze œuvre pour le bien-être et la réussite de tous les élèves. Notre mission est de représenter les parents, d'animer la vie scolaire et d'améliorer les conditions d'éducation.</p>
@@ -108,13 +299,13 @@
                         </div>
                     </div>
 
-                    <!-- UPDATED TEAM SECTION: Postes à pourvoir with previous members -->
+                    <!-- Right: Team + transition banner -->
                     <div class="team-section">
                         <div class="team-transition-banner">
                             <h3>🙌 Nouveau bureau 2026/2027 – Rejoignez-nous !</h3>
-                            <p>L'ensemble des membres du bureau 2025/2026 a fait le choix de passer la main. Nous remercions chaleureusement Marianne, Yoann, Sylvie, Céline et Izumi pour leur engagement et leur énergie.</p>
-                            <p><strong>Tous les postes sont à pourvoir.</strong> Si vous souhaitez vous investir pour les élèves et l'avenir de l'association, n'hésitez pas à nous contacter !</p>
-                            <a href="#contact" class="btn btn-primary" style="margin-top: var(--spacing-sm);">Je veux m'engager</a>
+                            <p>L'ensemble des membres du bureau 2025/2026 a fait le choix de passer la main. Nous remercions chaleureusement Marianne, Yoann, Sylvie, Céline et Izumi pour leur engagement.</p>
+                            <p><strong>Tous les postes sont à pourvoir.</strong> Si vous souhaitez vous investir, n'hésitez pas à nous contacter !</p>
+                            <a href="#contact" class="btn btn-primary" style="margin-top: var(--spacing-xs);">Je veux m'engager</a>
                         </div>
 
                         <div class="team-grid">
@@ -122,31 +313,31 @@
                                 <div class="member-icon">👩‍💼</div>
                                 <h4>Poste à pourvoir</h4>
                                 <p><strong>Président·e</strong></p>
-                                <p class="member-note">Précédemment occupé par <strong>Marianne PATISSIER</strong> (2025/2026)</p>
+                                <p class="member-note">Précédemment : Marianne PATISSIER (2025/2026)</p>
                             </div>
                             <div class="team-member">
                                 <div class="member-icon">👨‍💼</div>
                                 <h4>Poste à pourvoir</h4>
                                 <p><strong>Vice-Président·e</strong></p>
-                                <p class="member-note">Précédemment occupé par <strong>Yoann PICARONIE</strong> (2025/2026)</p>
+                                <p class="member-note">Précédemment : Yoann PICARONIE (2025/2026)</p>
                             </div>
                             <div class="team-member">
                                 <div class="member-icon">📝</div>
                                 <h4>Poste à pourvoir</h4>
                                 <p><strong>Secrétaire</strong></p>
-                                <p class="member-note">Précédemment occupé par <strong>Sylvie OLLIVOT</strong> (2025/2026)</p>
+                                <p class="member-note">Précédemment : Sylvie OLLIVOT (2025/2026)</p>
                             </div>
                             <div class="team-member">
                                 <div class="member-icon">💰</div>
                                 <h4>Poste à pourvoir</h4>
                                 <p><strong>Trésorier·ère</strong></p>
-                                <p class="member-note">Précédemment occupé par <strong>Céline LACOSTE</strong> (2025/2026)</p>
+                                <p class="member-note">Précédemment : Céline LACOSTE (2025/2026)</p>
                             </div>
                             <div class="team-member">
                                 <div class="member-icon">📢</div>
                                 <h4>Poste à pourvoir</h4>
                                 <p><strong>Chargé·e de Communication</strong></p>
-                                <p class="member-note">Précédemment occupé par <strong>Izumi BÉRAT</strong> (2025/2026)</p>
+                                <p class="member-note">Précédemment : Izumi BÉRAT (2025/2026)</p>
                             </div>
                         </div>
                     </div>
@@ -154,7 +345,7 @@
             </div>
         </section>
 
-        <!-- ARCHIVES SECTION: Past events (Bal d'Hiver 2025 moved here) -->
+        <!-- ARCHIVES – Past events (compact) -->
         <section id="archives" class="archives">
             <div class="container">
                 <div class="section-header">
@@ -162,98 +353,71 @@
                     <p>Retour sur les temps forts de notre association</p>
                 </div>
 
-                <!-- Bal d'Hiver 2025 – Past Event -->
+                <!-- Bal d'Hiver 2025 – compact -->
                 <div class="past-event-card">
-                    <div class="past-event-badge">✓ Événement terminé</div>
                     <div class="past-event-header">
                         <h3>Bal d'Hiver 2025 ❄️</h3>
+                        <span class="past-event-badge">✓ Terminé</span>
                         <p class="past-event-theme">Thème « Neige, Glace et Banquise »</p>
                     </div>
 
-                    <!-- Flyer Image -->
+                    <!-- Flyer -->
                     <div class="flyer-container">
-                        <img src="/images/Bal d'hiver flyer.png"
-                             alt="Flyer du Bal d'Hiver - 19 Décembre 2025, Foyer Rural de Lézat-sur-Lèze - Thème Neige, Glace et Banquise"
-                             class="event-flyer">
+                        <img src="/images/Bal d'hiver flyer.png" alt="Flyer du Bal d'Hiver 2025" class="event-flyer" />
                     </div>
 
-                    <!-- Thank you banner -->
-                    <div class="thanks-banner">
+                    <!-- Thanks compact -->
+                    <div class="thanks-banner-compact">
                         <h3>✨ Merci à tous ! ✨</h3>
-                        <p>Le Bal d'Hiver 2025 est désormais terminé. Nous remercions chaleureusement tous les participants, bénévoles et partenaires pour cette magnifique soirée.</p>
-                        <p>Revivez les meilleurs moments en consultant la galerie photo ci-dessous.</p>
+                        <p>Une soirée magnifique grâce à vous. Revivez les meilleurs moments dans la galerie photo.</p>
                     </div>
 
-                    <!-- Event Details -->
-                    <div class="past-event-details">
-                        <div class="details-grid">
-                            <div class="detail-item">
-                                <div class="detail-icon">📅</div>
-                                <div class="detail-content">
-                                    <strong>Date :</strong>
-                                    <span>Vendredi 19 décembre 2025</span>
-                                </div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-icon">📍</div>
-                                <div class="detail-content">
-                                    <strong>Lieu :</strong>
-                                    <span><a href="https://maps.app.goo.gl/Zr9aNzRpJP9hLUvaA" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Foyer Rural de Lézat-sur-Lèze</a></span>
-                                </div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-icon">⏰</div>
-                                <div class="detail-content">
-                                    <strong>Horaires :</strong>
-                                    <span>20h30 – 23h30</span>
-                                </div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-icon">🎭</div>
-                                <div class="detail-content">
-                                    <strong>Thème :</strong>
-                                    <span>« Neige, Glace et Banquise » ❄️</span>
-                                </div>
-                            </div>
+                    <!-- Details compact -->
+                    <div class="past-event-details-compact">
+                        <div class="detail-item">
+                            <span class="detail-icon">📅</span>
+                            <span class="detail-content"><strong>Date :</strong> Vendredi 19 décembre 2025</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">📍</span>
+                            <span class="detail-content"><strong>Lieu :</strong> <a href="https://maps.app.goo.gl/Zr9aNzRpJP9hLUvaA" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">Foyer Rural de Lézat</a></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⏰</span>
+                            <span class="detail-content"><strong>Horaires :</strong> 20h30 – 23h30</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🎭</span>
+                            <span class="detail-content"><strong>Thème :</strong> « Neige, Glace et Banquise »</span>
                         </div>
                     </div>
 
-                    <!-- Program -->
-                    <div class="past-event-program">
+                    <!-- Program compact -->
+                    <div class="past-event-program-compact">
                         <h4>🎭 Au programme</h4>
-                        <ul class="program-list">
+                        <ul>
                             <li>Musique et danse avec notre DJ</li>
                             <li>Élection du roi et de la reine du bal</li>
-                            <li>Animations surprises tout au long de la soirée</li>
-                            <li>Collation spéciale sur le thème de l'hiver</li>
-                            <li>Photo souvenir avec décor glacé</li>
+                            <li>Animations surprises</li>
+                            <li>Collation spéciale hiver</li>
+                            <li>Photo souvenir décor glacé</li>
                         </ul>
                     </div>
 
-                    <!-- Photo Gallery Link -->
-                    <div class="past-event-photos">
-                        <h4>📸 Photos du Bal d'Hiver</h4>
-                        <p>Revivez les moments magiques de cette soirée inoubliable !</p>
-                        <a href="https://photos.app.goo.gl/M2oTvLveTw3uLtEc9" class="btn btn-primary" target="_blank" rel="noopener" style="background-color: var(--accent); color: var(--dark);">Voir l'album photo</a>
+                    <!-- Photo link -->
+                    <div class="past-event-photos-link">
+                        <a href="https://photos.app.goo.gl/M2oTvLveTw3uLtEc9" class="btn btn-primary" target="_blank" rel="noopener" style="background-color: var(--accent); color: var(--dark);">📸 Voir l'album photo</a>
                     </div>
 
                     <div class="past-event-footer">
-                        <p><em>Merci à tous les participants et bénévoles qui ont fait de cette soirée un succès. Rendez-vous l'année prochaine pour une nouvelle édition encore plus féerique !</em></p>
-                        <p style="margin-top: var(--spacing-sm);">❄️✨</p>
+                        <p>Merci à tous les participants et bénévoles. Rendez-vous l'année prochaine ! ❄️✨</p>
                     </div>
                 </div>
-
-                <!-- Placeholder for future past events -->
-                <!--
-                <div class="past-event-card">
-                    <h3>Autre événement passé</h3>
-                    ...
-                </div>
-                -->
+                <!-- Fin Bal d'Hiver -->
             </div>
         </section>
 
-        <!-- Events Section (current/recurring) -->
+        <!-- Events (recurrent) -->
         <section id="evenements" class="events">
             <div class="container">
                 <div class="section-header">
@@ -312,7 +476,6 @@
                         <div class="event-description">
                             <p>Plongez dans l'ambiance féerique du Marché de Noël de Lézat ! Au programme : exposition et vente de produits d'artisans, ateliers créatifs pour les enfants, rencontre avec le Père Noël, maquillage, tatouages, mini-jeux, restauration sucrée et salée sur place, et une tombola avec de nombreux lots à gagner.</p>
                         </div>
-
                         <div class="participation-call">
                             <h5>🎁 Participez avec nous !</h5>
                             <p>L'APE tiendra un stand de vente de chocolats au marché de Noël pour ceux qui n'ont pas encore eu la chance d'en commander</p>
@@ -326,7 +489,7 @@
             </div>
         </section>
 
-        <!-- Resources Section -->
+        <!-- Resources -->
         <section id="ressources" class="resources">
             <div class="container">
                 <div class="section-header">
@@ -361,7 +524,7 @@
             </div>
         </section>
 
-        <!-- Join Section -->
+        <!-- Join -->
         <section class="join">
             <div class="container">
                 <div class="section-header">
@@ -393,7 +556,7 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- Contact -->
         <section id="contact" class="contact">
             <div class="container">
                 <div class="section-header">
@@ -408,7 +571,7 @@
                         </div>
                         <div class="contact-item">
                             <strong>Adresse :</strong>
-                            <span>Collège François Verdier<br>Lézat-sur-Lèze</span>
+                            <span>Collège François Verdier<br />Lézat-sur-Lèze</span>
                         </div>
                         <div class="contact-note">
                             <p>N'hésitez pas à nous contacter pour toute question, suggestion ou pour vous impliquer dans les actions de l'association.</p>
@@ -420,19 +583,16 @@
                         <form id="contact-form" class="contact-form" action="https://formspree.io/f/xanaqpvq" method="POST">
                             <div class="form-group">
                                 <label for="name">Nom *</label>
-                                <input type="text" id="name" name="name" required>
+                                <input type="text" id="name" name="name" required />
                             </div>
-
                             <div class="form-group">
                                 <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required>
+                                <input type="email" id="email" name="email" required />
                             </div>
-
                             <div class="form-group">
                                 <label for="phone">Téléphone</label>
-                                <input type="tel" id="phone" name="phone">
+                                <input type="tel" id="phone" name="phone" />
                             </div>
-
                             <div class="form-group">
                                 <label for="subject">Sujet</label>
                                 <select id="subject" name="subject">
@@ -445,18 +605,15 @@
                                     <option value="bureau">Rejoindre le bureau</option>
                                 </select>
                             </div>
-
                             <div class="form-group">
                                 <label for="message">Message *</label>
                                 <textarea id="message" name="message" rows="5" required></textarea>
                             </div>
-
-                            <!-- Honeypot field for spam protection -->
+                            <!-- Honeypot -->
                             <div class="form-group honeypot">
                                 <label for="website">Site web</label>
-                                <input type="text" id="website" name="website" tabindex="-1">
+                                <input type="text" id="website" name="website" tabindex="-1" />
                             </div>
-
                             <button type="submit" class="btn btn-primary">Envoyer</button>
                         </form>
                         <div id="form-message"></div>
@@ -472,12 +629,11 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <div class="footer-logo">
-                        <img src="images/logo.png" alt="APE François-Verdier" width="80" height="80">
+                        <img src="images/logo.png" alt="APE François-Verdier" width="80" height="80" />
                     </div>
                     <h3>APE François-Verdier</h3>
                     <p>Association des Parents d'Élèves du collège François Verdier de Lézat-sur-Lèze</p>
                 </div>
-
                 <div class="footer-links">
                     <h4>Liens rapides</h4>
                     <ul>
@@ -489,14 +645,12 @@
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-contact">
                     <h4>Contact</h4>
                     <p>Email: <a href="mailto:contact@apecollegehappy.fr">contact@apecollegehappy.fr</a></p>
                     <p>Adresse: Collège François Verdier, Lézat-sur-Lèze</p>
                 </div>
             </div>
-
             <div class="footer-bottom">
                 <p>&copy; 2026 APE François-Verdier. Tous droits réservés.</p>
                 <div class="footer-attribution">
@@ -509,7 +663,7 @@
     <!-- JavaScript -->
     <script src="scripts/main.js?v=1.1"></script>
 
-    <!-- ESSENTIAL STRUCTURED DATA ONLY -->
+    <!-- Structured Data -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -525,13 +679,7 @@
                 "postalCode": "09210",
                 "addressCountry": "FR"
             },
-            "knowsAbout": [
-                "Éducation",
-                "Vie scolaire",
-                "Parents d'élèves",
-                "Collège François Verdier",
-                "Lézat-sur-Lèze"
-            ]
+            "knowsAbout": ["Éducation", "Vie scolaire", "Parents d'élèves", "Collège François Verdier", "Lézat-sur-Lèze"]
         }
     </script>
 </body>
