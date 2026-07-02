@@ -80,6 +80,22 @@
             margin-top: var(--spacing-xs);
             font-style: italic;
         }
+        .team-member .transition-tag {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            display: block;
+            background: rgba(255, 215, 0, 0.2);
+            padding: 0.1rem 0.4rem;
+            border-radius: 12px;
+            margin-top: 0.25rem;
+        }
+        .team-member .open-tag {
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 700;
+            display: block;
+            margin-top: 0.25rem;
+        }
         /* Past event – compact */
         .past-event-card {
             background: rgba(255, 255, 255, 0.05);
@@ -302,42 +318,46 @@
                     <!-- Right: Team + transition banner -->
                     <div class="team-section">
                         <div class="team-transition-banner">
-                            <h3>🙌 Nouveau bureau 2026/2027 – Rejoignez-nous !</h3>
-                            <p>L'ensemble des membres du bureau 2025/2026 a fait le choix de passer la main. Nous remercions chaleureusement Marianne, Yoann, Sylvie, Céline et Izumi pour leur engagement.</p>
-                            <p><strong>Tous les postes sont à pourvoir.</strong> Si vous souhaitez vous investir, n'hésitez pas à nous contacter !</p>
+                            <h3>🙌 Année de transition 2026/2027</h3>
+                            <p><strong>Marianne, Yoann et Céline</strong> poursuivent leur engagement pour une année de transition. Ils accompagneront les nouveaux membres pour assurer une passation sereine en 2027/2028.</p>
+                            <p><strong>Les postes de Secrétaire et de Chargé·e de Communication sont à pourvoir immédiatement.</strong> C'est le moment idéal pour rejoindre l'équipe et bénéficier d'un accompagnement sur mesure !</p>
                             <a href="#contact" class="btn btn-primary" style="margin-top: var(--spacing-xs);">Je veux m'engager</a>
                         </div>
 
                         <div class="team-grid">
+                            <!-- Staying members -->
                             <div class="team-member">
                                 <div class="member-icon">👩‍💼</div>
-                                <h4>Poste à pourvoir</h4>
-                                <p><strong>Président·e</strong></p>
-                                <p class="member-note">Précédemment : Marianne PATISSIER (2025/2026)</p>
+                                <h4>Marianne PATISSIER</h4>
+                                <p><strong>Présidente</strong></p>
+                                <span class="transition-tag">🔄 Transition 2026/2027 – forme son successeur</span>
                             </div>
                             <div class="team-member">
                                 <div class="member-icon">👨‍💼</div>
-                                <h4>Poste à pourvoir</h4>
-                                <p><strong>Vice-Président·e</strong></p>
-                                <p class="member-note">Précédemment : Yoann PICARONIE (2025/2026)</p>
+                                <h4>Yoann PICARONIE</h4>
+                                <p><strong>Vice-Président</strong></p>
+                                <span class="transition-tag">🔄 Transition 2026/2027 – forme son successeur</span>
                             </div>
+                            <div class="team-member">
+                                <div class="member-icon">💰</div>
+                                <h4>Céline LACOSTE</h4>
+                                <p><strong>Trésorière</strong></p>
+                                <span class="transition-tag">🔄 Transition 2026/2027 – forme son successeur</span>
+                            </div>
+                            <!-- Open positions -->
                             <div class="team-member">
                                 <div class="member-icon">📝</div>
                                 <h4>Poste à pourvoir</h4>
                                 <p><strong>Secrétaire</strong></p>
-                                <p class="member-note">Précédemment : Sylvie OLLIVOT (2025/2026)</p>
-                            </div>
-                            <div class="team-member">
-                                <div class="member-icon">💰</div>
-                                <h4>Poste à pourvoir</h4>
-                                <p><strong>Trésorier·ère</strong></p>
-                                <p class="member-note">Précédemment : Céline LACOSTE (2025/2026)</p>
+                                <span class="open-tag">📢 Rejoignez-nous dès maintenant !</span>
+                                <p class="member-note">Précédemment occupé par Sylvie OLLIVOT</p>
                             </div>
                             <div class="team-member">
                                 <div class="member-icon">📢</div>
                                 <h4>Poste à pourvoir</h4>
                                 <p><strong>Chargé·e de Communication</strong></p>
-                                <p class="member-note">Précédemment : Izumi BÉRAT (2025/2026)</p>
+                                <span class="open-tag">📢 Rejoignez-nous dès maintenant !</span>
+                                <p class="member-note">Précédemment occupé par Izumi BÉRAT</p>
                             </div>
                         </div>
                     </div>
@@ -602,7 +622,7 @@
                                     <option value="evenement">Participation à un événement</option>
                                     <option value="question">Question générale</option>
                                     <option value="suggestion">Suggestion</option>
-                                    <option value="bureau">Rejoindre le bureau</option>
+                                    <option value="bureau">Rejoindre le bureau (transition)</option>
                                 </select>
                             </div>
                             <div class="form-group">
